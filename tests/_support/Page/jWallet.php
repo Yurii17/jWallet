@@ -1,0 +1,238 @@
+<?php
+namespace Page;
+
+
+class jWallet
+{
+    // include url of current page
+    public static $URL = '';
+
+    /**
+     * Declare UI map for this page here. CSS or XPath allowed.
+     * public static $usernameField = '#username';
+     * public static $formSubmitButton = "#mainForm input[type=submit]";
+     */
+
+    // Home
+    public static $Logo = '#__layout > div > div:nth-child(2) > header > a.logo.logo-device.nuxt-link-active > img';
+    public static $Header = '#__layout > div > div:nth-child(2) > header';
+    public static $cabinetBtn = 'div.col-12.col-lg-7.align-self-center > div > a';
+
+    // Login form
+    public static $LoginBtn = '#__layout > div > div:nth-child(2) > header > div.user-box > div > button';
+    public static $LoginBtnModal = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.common-link-btn > button';
+    public static $LoginToAccount = 'authModal___BV_modal_body_';
+    public static $LoginEmail = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div:nth-child(1) > input';
+    public static $LoginPassword = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div:nth-child(2) > input';
+    public static $LoginRegistration = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.common-link-btn > div > a';
+    public static $LoginForgotPassword = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.common-link-btn > div > span';
+
+    //Registration
+    public static $RegistrationModal = 'div.container.clearfix > div.right-col > div';
+    public static $RegistrationEmail = 'div.container.clearfix > div.right-col > div > form > div > input';
+    public static $registrationBtnDisabled = 'button.btn[disabled="disabled"]';
+    public static $registrationBtnActive = 'button.btn';
+    public static $registrationBtn = 'div.container.clearfix > div.right-col > div > form > button';
+    public static $registrationFieldEmail = '#email';
+
+
+    //Account settings
+    public static $Profile = 'div.tabs-with-btn.d-flex.justify-content-between > div > nav > a:nth-child(1)';
+    public static $profileBalance = '#__layout > div > div:nth-child(2) > header > div.user-box > div > span > strong';
+    public static $ProfileActive = 'div.tabs-with-btn.d-flex.justify-content-between > div > nav > a.nav-item.nav-link.active';
+    public static $ProfileContent = '#__layout > div > section > div.container > div > div:nth-child(2) > div:nth-child(1) > div.tab-content > div:nth-child(1) > div > div.col-12.col-md-6.col-lg-4.border-right > div';
+    public static $ProfileContentItem = [
+        'div.col-12.col-md-6.col-lg-4.border-right > div > div:nth-child(1)',
+        'div.col-12.col-md-6.col-lg-4.border-right > div > div:nth-child(2)',
+        'div.col-12.col-md-6.col-lg-4.border-right > div > div:nth-child(3)',
+        'div.col-12.col-md-6.col-lg-4.border-right > div > div:nth-child(4)'
+    ];
+    public static $ProfileContentSecurity = 'div.col-12.col-md-6.col-lg-8 > form';
+    public static $ProfileContentCheckbox = [
+        'input[type="checkbox"][id="login_ok"][name="login_ok"]',
+        'input[type="checkbox"][id="transaction_out"][name="transaction_out"]',
+        'input[type="checkbox"][id="transaction_in"][name="transaction_in"]',
+    ];
+    public static $ProfileSaveBtn = 'div.col-12.col-md-6.col-lg-8 > form > button';
+
+    public static $Security = 'div.tabs-with-btn.d-flex.justify-content-between > div > nav > a:nth-child(2)';
+    public static $SecurityActive = 'div.tabs-with-btn.d-flex.justify-content-between > div > nav > a.nav-item.nav-link.active';
+    public static $SecurityRestrictionOnIP = 'div.col-12.col-lg-6.padding-r-custom';
+    public static $SecurityIpField = 'div.col-12.col-lg-6.padding-r-custom > div.form-group > div > div.input-group-inner > input';
+    public static $SecurityIpActiveButton = 'div.col-12.col-lg-6.padding-r-custom > div.form-group > div > div.input-group-append > button';
+    public static $SecurityAllowedIp = 'div.col-12.col-lg-6.padding-r-custom > div:nth-child(4) > div';
+    public static $SecurityAllowedIpClose = 'div.col-12.col-lg-6.padding-r-custom > div:nth-child(4) > div > span > i';
+    public static $SecurityPin = 'div.col-12.col-lg-6.padding-l-custom';
+    public static $SecurityPinCheckButton = 'div.col-12.col-lg-6.padding-l-custom > div > button';
+    public static $SecurityPinModal = '#tfa___BV_modal_body_';
+    public static $SecurityPinModalType = '#tfa___BV_modal_body_ > div > div > div:nth-child(1)';
+    public static $SecurityPinModalTypeDrop = '#tfa___BV_modal_body_ > div > div > div:nth-child(1) > div > div > div > div';
+    public static $SecurityPinModalTypeDropOptionSelected = 'div:nth-child(1) > div > div > div > div > ul > li.option.selected.focus';
+    public static $SecurityPinModalTypeDropPin = '#tfa___BV_modal_body_ > div > div > div:nth-child(1) > div > div > div > div > ul > li:nth-child(2)';
+    public static $SecurityPinModalTypeDropGoogle = 'li:nth-child(3)';
+    public static $SecurityPinModalTypeNewPin = '#paypin_password';
+    public static $SecurityPinModalTypeNewPin2 = '#paypin_password_confirmation';
+    public static $SecurityPinModalTypeSwitchButton = 'div:nth-child(3) > button';
+    public static $SecurityPinModalStatus = '#tfa___BV_modal_body_ > div > div.row.justify-content-between.align-items-center > div.col-sm-4.text-right > div > span.st.off';
+    public static $SecurityPinModalStatusActive = '';
+    public static $SecurityPinModalClose = '#tfa___BV_modal_body_ > i';
+    public static $securitySaveBtn = 'div.text-center > button';
+
+
+    public static $EXIT = '#__layout > div > div:nth-child(2) > header > div.user-box > div > a';
+    public static $EXITModal = '#logoutModal > div > div';
+    public static $EXITModalCancel = '#logoutModal___BV_modal_footer_ > button.btn.btn-secondary';
+    public static $EXITModalOK = '#logoutModal___BV_modal_footer_ > button.btn.btn-primary';
+
+    // About company
+    public static $AboutCompany = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(1)';
+
+    // Tariffs
+    public static $Tariffs = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(2)';
+
+    // FAQ
+    public static $FAQ = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(3)';
+
+    // Recalls
+    public static $Recalls = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(4)';
+    public static $recallsName = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(2) > input';
+    public static $recallsEmail = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(3) > input';
+    public static $recallsComent = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(4) > textarea';
+    public static $recallsBtnDisabled = 'button.btn[disabled="disabled"]';
+    public static $recallsBtnActive = 'button.btn[type="submit"]';
+    public static $recallsGrabName = 'div:nth-child(1) > h5';
+    public static $recallsGrabDate = 'div:nth-child(1) > p.date';
+
+
+    // Vacancies
+    public static $Vacancies = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(5)';
+    public static $vacanciesForm = 'div.col-12.col-lg-5.col-xl-4 > div > form';
+    public static $vacanciesName = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(2) > input';
+    public static $vacanciesEmail = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(3) > input';
+    public static $vacanciesComent = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(4) > textarea';
+    public static $vacanciesBtnDisabled = 'button.btn[disabled="disabled"]';
+    public static $vacanciesBtnActive = 'button.btn[type="submit"]';
+
+
+    // Contacts
+    public static $Contacts = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(6)';
+    public static $contactsForm = 'div.col-12.col-lg-5.col-xl-6 > div';
+    public static $contactsName = 'div.col-12.col-lg-5.col-xl-6 > div > div:nth-child(2) > input';
+    public static $contactsEmail = 'div.col-12.col-lg-5.col-xl-6 > div > div:nth-child(3) > input';
+    public static $contactsComent = 'div.col-12.col-lg-5.col-xl-6 > div > div:nth-child(4) > textarea';
+    public static $contactsBtnDisabled = 'button.btn[disabled="disabled"]';
+    public static $contactsBtnActive = 'button.btn[type="submit"]';
+
+
+    // Language
+    public static $LanguageDrop = '#drop-lang';
+    public static $EN = '#drop-lang > div > a:nth-child(1)';
+    public static $RU = '#__BVID__30__BV_toggle_';
+
+
+
+    //Mass transfer
+    public static $addPayment = 'div:nth-child(2) > form > div.text-center > div';
+    public static $addPaymentDrop = [
+        '#__layout > div > section > div.container > div > div:nth-child(2) > form > div.text-center > div > div > a:nth-child(1)',
+        'a:nth-child(2)',
+        'a:nth-child(3)',
+        'a:nth-child(4)',
+        'a:nth-child(5)',
+        'a:nth-child(6)'
+        ];
+
+    public static $addPaxum = '#__layout > div > section > div.container > div > div:nth-child(2) > form > div.text-center > div > div > a:nth-child(1)';
+    public static $addPaxumEmail = 'div.col-12.col-sm-6.col-lg-3 > div > input';
+    public static $addPaxumSum = 'div.input-group-inner > input';
+    public static $addPaxumControlField = ' div.item > div > div:nth-child(5) > div > div > div.input-group-inner > input';
+    public static $addPaxumBtn = 'div.col-12.col-md-6.text-center.text-md-right > button';
+    public static $addPaxumEmail2 = ' div:nth-child(3) > div > div.col-12.col-sm-6.col-lg-3 > div > input';
+    public static $addPaxumSum2 = '#__layout > div > section > div.container > div > div:nth-child(2) > form > div.content-box.payments > div > div:nth-child(3) > div > div:nth-child(4) > div > div > div.input-group-inner > input';
+    public static $addPaxumControlField2 = ' div:nth-child(3) > div > div:nth-child(5) > div > div > div.input-group-inner > input';
+    public static $addPaxumConfirm = '#__layout > div > section > div.container > div > div:nth-child(2) > div > div > div:nth-child(1) > table > tbody > tr:nth-child(5) > td';
+    public static $addPaxumConfirm2 = '#__layout > div > section > div.container > div > div:nth-child(2) > div > div > div:nth-child(1) > table > tbody > tr:nth-child(6) > td';
+    public static $addPaxumConfirmBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase';
+    public static $addPaxumConfirmBtnCancel = 'button.btn.btn-danger.d-block.text-center.text-uppercase';
+
+    //Money Transaction
+    public static $moneyTransactionExmo = 'div:nth-child(2) > div > div > div:nth-child(4) > a';
+    public static $moneyTransactionSum = 'div:nth-child(1) > div:nth-child(1) > div > input';
+    public static $moneyTransactionSumComission = 'div:nth-child(1) > div:nth-child(3) > div > input';
+    public static $moneyTransactionBtn = 'form > div:nth-child(2) > div > button';
+    public static $moneyTransactionSum1 = 'tr:nth-child(6) > td';
+    public static $moneyTransactionSumComission1 = 'tr:nth-child(7) > td';
+    public static $moneyTransactionApproveBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase';
+
+
+
+    //Transaction History
+    public static $historyFilter = 'div.content-box.history';
+    public static $historyBtn = '#__layout > div > section > div.container > div > div:nth-child(2) > div.table-history > div.pagination-box > ul > li:nth-child(9) > a';
+    public static $historyOperation = '#__layout > div > section > div.container > div > div:nth-child(2) > div.table-history > div.table > div.body > div:nth-child(1)';
+    public static $historyID = 'div.d-flex.head > div:nth-child(1)';
+    public static $historyFilterDate = '';
+    public static $historyFilterType = '';
+    public static $historyBalance = '';
+
+
+    //Slider Time
+    public static $sliderTime = 'div.scroll-time.vue-slider-component.vue-slider-horizontal.vue-slider-has-label';
+    public static $sliderSlide = 'div.scroll-time.vue-slider-component.vue-slider-horizontal.vue-slider-has-label > div > div.vue-slider-always.vue-slider-dot';
+
+    //Pay Service
+    public static $payServiceURL = '#url';
+    public static $payServiceDescription = '#description';
+    public static $payServiceDrop = 'div:nth-child(4) > div > div:nth-child(1) > div > div > div > div > div > div';
+    public static $payServiceDropList = [
+        'div:nth-child(1) > div > div > div > div > div > div > ul > li:nth-child(1)',
+        'div:nth-child(1) > div > div > div > div > div > div > ul > li:nth-child(2)',
+        'div:nth-child(1) > div > div > div > div > div > div > ul > li:nth-child(3)',
+    ];
+    public static $payServiceSum = 'div:nth-child(1) > div > div:nth-child(2) > div > div > div.input-group-inner > input';
+    public static $payServiceSum2 = '#__layout > div > section > div.container > div > div:nth-child(2) > div.content-box > div > form > div > div:nth-child(4) > div > div:nth-child(1) > div > div:nth-child(3) > div > div > div.input-group-inner > input';
+    public static $payServiceBtnDisabled = 'button.btn[disabled="disabled"]';
+    public static $payServiceBtnActive = 'form > div > div:nth-child(4) > div > div:nth-child(2) > div > button';
+    public static $payServiceApproveSum = 'tr:nth-child(6) > td';
+    public static $payServiceApproveSum2 = 'tr:nth-child(7) > td';
+    public static $payServiceApproveBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Basic route example for your current URL
+     * You can append any additional parameter to URL
+     * and use it in tests like: Page\Edit::route('/123-post');
+     */
+    public static function route($param)
+    {
+        return static::$URL.$param;
+    }
+
+
+}
