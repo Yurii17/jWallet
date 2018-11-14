@@ -178,12 +178,12 @@ class jWallet
     public static $historyFilterRefreshBtn = 'div.col-12.col-xl-5.d-flex.justify-content-around.align-items-end.padding-l-n.filter-bottom > button';
     public static $historyFilterEmptyValue = '#__layout > div > section > div.container > div > div:nth-child(2) > div.content-box.history-alert > div';
     public static $historyFilterTypeStatusDrop = [
-        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(2)',
-        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(3)',
-        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(4)',
-        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(5)',
-        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(6)',
-        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(7)'
+        'div:nth-child(4) > div > div > div > ul > li:nth-child(2)',
+        'div:nth-child(4) > div > div > div > ul > li:nth-child(3)',
+        'div:nth-child(4) > div > div > div > ul > li:nth-child(4)',
+        'div:nth-child(4) > div > div > div > ul > li:nth-child(5)',
+        'div:nth-child(4) > div > div > div > ul > li:nth-child(6)',
+        'div:nth-child(4) > div > div > div > ul > li:nth-child(7)'
     ];
     public static $historyGrabLine = 'div.body > div:nth-child(1)';
     public static $historyID = 'div.d-flex.head > div:nth-child(1)';
