@@ -166,14 +166,33 @@ class jWallet
 
 
 
-    //Transaction History
+    //Transaction History or FAQ
     public static $historyFilter = 'div.content-box.history';
     public static $historyBtn = '#__layout > div > section > div.container > div > div:nth-child(2) > div.table-history > div.pagination-box > ul > li:nth-child(9) > a';
-    public static $historyOperation = '#__layout > div > section > div.container > div > div:nth-child(2) > div.table-history > div.table > div.body > div:nth-child(1)';
+
+    public static $historyFilterDate = 'div.table-history > div.table > div.d-flex.head > div:nth-child(4)';
+    public static $historyFilterTypeDrop = 'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(3) > div > div > div';
+    public static $historyFilterTypeInput = 'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(3) > div > div > div > ul > li:nth-child(3)';
+    public static $historyFilterTypeOutput = 'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(3) > div > div > div > ul > li:nth-child(2)';
+    public static $historyFilterTypeStatus = 'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div';
+    public static $historyFilterRefreshBtn = 'div.col-12.col-xl-5.d-flex.justify-content-around.align-items-end.padding-l-n.filter-bottom > button';
+    public static $historyFilterEmptyValue = '#__layout > div > section > div.container > div > div:nth-child(2) > div.content-box.history-alert > div';
+    public static $historyFilterTypeStatusDrop = [
+        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(2)',
+        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(3)',
+        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(4)',
+        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(5)',
+        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(6)',
+        'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(4) > div > div > div > ul > li:nth-child(7)'
+    ];
+    public static $historyGrabLine = 'div.body > div:nth-child(1)';
     public static $historyID = 'div.d-flex.head > div:nth-child(1)';
-    public static $historyFilterDate = '';
-    public static $historyFilterType = '';
-    public static $historyBalance = '';
+    public static $historyStatusCol = 'div.table-history > div.table > div.body > div:nth-child(1) > div > div:nth-child(5)';
+    public static $historyBalance = 'div.table-history > div.table > div.d-flex.head > div:nth-child(7)';
+
+
+
+
 
 
     //Slider Time
