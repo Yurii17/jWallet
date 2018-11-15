@@ -220,7 +220,7 @@ class jWalletCest
         var_dump($value1, $value2, $value3, $value4, $value, $value5, $value6);
     }
 
-    public function RecallsSend (AcceptanceTester $I)
+    public function RecallsSend (AcceptanceTester $I)           // Поставили кепчу
     {
         $I->click(page::$Recalls);
         $I->seeElement(page::$recallsBtnDisabled);
@@ -230,11 +230,10 @@ class jWalletCest
         $I->fillField(page::$recallsName, $value);
         $I->fillField(page::$recallsEmail, $value1);
         $I->fillField(page::$recallsComent, 'Test ...');
-        $I->seeElement(page::$recallsBtnDisabled);
         $value2 = $this->valueTrue[array_rand($this->valueTrue)];
         $I->fillField(page::$recallsEmail, $value2);
+        $I->canSeeElement(page::$recallsBtnDisabled);
         $I->click(page::$recallsBtnActive);
-        $I->wait(3);
         $value3 = $I->grabTextFrom(page::$recallsGrabName);
         $value4 = $I->grabTextFrom(page::$recallsGrabDate);
         var_dump ($value, $value1, $value2, $value3, $value4);
@@ -243,7 +242,7 @@ class jWalletCest
      * @param AcceptanceTester $I
      * @throws Exception
      */
-    public function Vacancies(AcceptanceTester $I)
+    public function Vacancies(AcceptanceTester $I)              //Поставили кепчу
     {
         $I->click(page::$Vacancies);
         $I->waitForElementVisible(page::$vacanciesForm);
@@ -252,17 +251,15 @@ class jWalletCest
         $I->fillField(page::$vacanciesName, $value);
         $I->fillField(page::$vacanciesEmail, $value1);
         $I->fillField(page::$vacanciesComent,'TEST..');
-        $I->seeElement(page::$vacanciesBtnDisabled);
         $I->fillField(page::$vacanciesEmail,'test@gmail.com');
+        $I->canSeeElement(page::$vacanciesBtnDisabled);
         $I->click(page::$vacanciesBtnActive);
-        $I->wait(3);
-        $I->seeInField(page::$vacanciesName,'');
     }
     /**
      * @param AcceptanceTester $I
      * @throws Exception
      */
-    public function Contacts(AcceptanceTester $I)
+    public function Contacts(AcceptanceTester $I)               // Поставили кепчу
     {
         $I->click(page::$Contacts);
         $I->waitForElementVisible(page::$contactsForm);
@@ -271,11 +268,9 @@ class jWalletCest
         $I->fillField(page::$contactsName, $value);
         $I->fillField(page::$contactsEmail, $value1);
         $I->fillField(page::$contactsComent,'TEST..');
-        $I->seeElement(page::$contactsBtnDisabled);
         $I->fillField(page::$contactsEmail,'test@gmail.com');
+        $I->canseeElement(page::$contactsBtnDisabled);
         $I->click(page::$contactsBtnActive);
-        $I->wait(3);
-        $I->seeInField(page::$contactsName,'');
     }
 
     /**
@@ -301,73 +296,13 @@ class jWalletCest
         $I->click(page::$securitySaveBtn);
     }
 
-    public function History(AcceptanceTester $I)
+    public function HistorySet(AcceptanceTester $I)
     {
         $I->Login($I);
         $I->click(page::$FAQ);
         $I->amOnPage('/account/history');
-        $value = $I->grabTextFrom(page::$historyGrabLine);
-        $I->click(page::$historyFilterTypeDrop);
-        $I->click(page::$historyFilterTypeInput);
-        $I->click(page::$historyFilterRefreshBtn);
-        $I->wait(2);
-        $I->seeElement(page::$historyFilterEmptyValue);   // Пусте значення поки
-        $I->click(page::$historyFilterTypeDrop);
-        $I->click(page::$historyFilterTypeOutput);
-        $I->click(page::$historyFilterRefreshBtn);
-        $I->wait(2);
-        $value1 = $I->grabTextFrom(page::$historyGrabLine);
-        $I->assertSame($value, $value1);
-        $I->click(page::$historyFilterTypeStatus);
-        $value2 = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);
-        $I->click(page::$historyFilterTypeStatusDrop[0]);
-        $I->click(page::$historyFilterRefreshBtn);
-        $I->wait(2);
-        $value3 = $I->grabTextFrom(page::$historyStatusCol);
-        $I->assertNotSame($value2, $value3);                  // Поправити коли залиють фікси на AssertSame
-        $I->click(page::$historyFilterTypeStatus);
-        $value4 = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[1]);
-        $I->click(page::$historyFilterTypeStatusDrop[1]);
-        $I->click(page::$historyFilterRefreshBtn);
-        $I->wait(2);
-        $value5 = $I->grabTextFrom(page::$historyStatusCol);
-        $I->assertSame($value4, $value5);
-        $I->click(page::$historyFilterTypeStatus);
-        $value6 = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[2]);
-        $I->click(page::$historyFilterTypeStatusDrop[2]);
-        $I->click(page::$historyFilterRefreshBtn);
-        $I->wait(2);
-        $value7 = $I->grabTextFrom(page::$historyStatusCol);
-        $I->assertSame($value6, $value7);
-        $I->click(page::$historyFilterTypeStatus);
-        $value8 = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[3]);  // Исполнен  - пусте значення поки
-        $I->click(page::$historyFilterTypeStatusDrop[3]);
-        $I->click(page::$historyFilterRefreshBtn);
-        $I->wait(2);
-        $value9 = $I->grabTextFrom(page::$historyFilterEmptyValue);
-        $I->assertNotSame($value8, $value9);                          // Исполнен  - пусте значення поки
-        $I->click(page::$historyFilterTypeStatus);
-        $value10 = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[4]);
-        $I->click(page::$historyFilterTypeStatusDrop[4]);
-        $I->click(page::$historyFilterRefreshBtn);
-        $I->wait(2);
-        $value11 = $I->grabTextFrom(page::$historyStatusCol);
-        $I->assertSame($value10, $value11);
-        $I->click(page::$historyFilterTypeStatus);
-        $value12 = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[5]); // В процессе
-        $I->click(page::$historyFilterTypeStatusDrop[5]);
-        $I->click(page::$historyFilterRefreshBtn);
-        $I->wait(2);
-        $value13 = $I->grabTextFrom(page::$historyFilterEmptyValue);
-        $I->assertNotSame($value12, $value13);
-
-        var_dump($value, $value1, $value2, $value4, $value4, $value5,
-            $value6, $value7, $value8, $value9, $value10, $value11, $value12, $value13 );
+        $I->HistorySet($I);
     }
-
-
-
-
 
 
 
