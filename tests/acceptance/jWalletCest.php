@@ -285,6 +285,7 @@ class jWalletCest
     {
         $I->Login($I);
         $I->click(page::$Security);
+        $I->wait(2);
         $before = $I->grabTextFrom(page::$sliderTime);
         $I->slide(page::$sliderSlide,460,0);
         $after = $I->grabTextFrom(page::$sliderTime);
@@ -296,8 +297,12 @@ class jWalletCest
         $I->click(page::$Security);
         $last = $I->grabTextFrom(page::$sliderTime);
         $I->assertSame($after, $last);
+        $I->wait(3);
         $I->slide(page::$sliderSlide,-460,0);
+        $I->wait(2);
         $I->click(page::$securitySaveBtn);
+        $I->wait(2);
+        $I->click(page::$EXIT);
     }
     /**
      * @param AcceptanceTester $I
