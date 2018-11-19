@@ -26,6 +26,9 @@ class jWallet
     public static $LoginPassword = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div:nth-child(2) > input';
     public static $LoginRegistration = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.common-link-btn > div > a';
     public static $LoginForgotPassword = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.common-link-btn > div > span';
+    public static $LoginForgotPasswordEmail = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.form-group > input';
+    public static $LoginForgotPasswordBtn = 'div.common-link-btn > button';
+
 
     //Registration
     public static $RegistrationModal = 'div.container.clearfix > div.right-col > div';

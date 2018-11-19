@@ -316,7 +316,30 @@ class jWalletCest
         $I->amOnPage('/account/history');
         $I->HistorySet($I);
     }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function ForgotPassword(AcceptanceTester $I)
+    {
+        $I->click(page::$LoginBtn);
+        $I->waitForElementVisible(page::$LoginEmail,100);
+        $I->click(page::$LoginForgotPassword);
+        $value = $this->valueFalse[array_rand($this->valueFalse)];
 
+        if ($value == false )
+
+            $I->fillField(page::$LoginForgotPasswordEmail, $value) == true ?
+                $I->seeInField(page::$LoginForgotPasswordEmail, $value) :
+                $I->click(page::$LoginForgotPasswordBtn);
+
+        else($value == false);
+            $I->fillField(page::$LoginForgotPasswordEmail, 'yurii.lobas@gmail.com');
+            $I->click(page::$LoginForgotPasswordBtn);
+            $I->wait(2);
+            $I->seeElement(page::$RegistrationModal);
+            var_dump($value);
+    }
 
 
 
