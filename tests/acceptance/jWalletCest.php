@@ -295,6 +295,7 @@ class jWalletCest
         $I->wait(4);
         $I->Login($I);
         $I->click(page::$Security);
+        $I->scrollTo(page::$sliderSlide);
         $last = $I->grabTextFrom(page::$sliderTime);
         $I->assertSame($after, $last);
         $I->wait(3);
