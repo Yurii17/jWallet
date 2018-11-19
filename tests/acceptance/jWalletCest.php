@@ -240,7 +240,6 @@ class jWalletCest
         $I->fillField(page::$recallsComent, 'Test ...');
         $value2 = $this->valueTrue[array_rand($this->valueTrue)];
         $I->fillField(page::$recallsEmail, $value2);
-        $I->canSeeElement(page::$recallsBtnDisabled);
         $I->click(page::$recallsBtnActive);
         $value3 = $I->grabTextFrom(page::$recallsGrabName);
         $value4 = $I->grabTextFrom(page::$recallsGrabDate);
@@ -260,7 +259,6 @@ class jWalletCest
         $I->fillField(page::$vacanciesEmail, $value1);
         $I->fillField(page::$vacanciesComent,'TEST..');
         $I->fillField(page::$vacanciesEmail,'test@gmail.com');
-        $I->canSeeElement(page::$vacanciesBtnDisabled);
         $I->click(page::$vacanciesBtnActive);
     }
     /**
@@ -277,7 +275,6 @@ class jWalletCest
         $I->fillField(page::$contactsEmail, $value1);
         $I->fillField(page::$contactsComent,'TEST..');
         $I->fillField(page::$contactsEmail,'test@gmail.com');
-        $I->canseeElement(page::$contactsBtnDisabled);
         $I->click(page::$contactsBtnActive);
     }
     /**
