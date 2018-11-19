@@ -132,6 +132,7 @@ class jWalletCest
         $value3 = $I->grabTextFrom(page::$profileBalance);
         $value4 = $I->grabTextFrom(page::$historyGrabLine);
         var_dump($value1, $value2, $value, $value3, $value4);
+        $I->click(page::$EXIT);
         $I->assertNotSame($value,$value3);
     }
     /**
@@ -171,6 +172,7 @@ class jWalletCest
         $value5 = $I->grabTextFrom(page::$profileBalance);
         $value6 = $I->grabTextFrom(page::$historyGrabLine);
         var_dump($value1, $value2, $value3, $value4, $value5, $value, $value6);
+        $I->click(page::$EXIT);
         $I->assertNotSame($value,$value5);
     }
     /**
@@ -179,10 +181,14 @@ class jWalletCest
      */
     public function MassTransaction(AcceptanceTester $I)
     {
-        $I->executeJS("window.confirm = function(msg){return true;};");
         $I->Login($I);
-        $I->waitForElementVisible(page::$Vacancies,100);
-        $I->click(page::$Vacancies);
+        $value01 = $I->waitForElementVisible(page::$Vacancies,5);
+
+            if ($value01 == false)
+                $I->reloadPage('/');
+            else($value01 == true);
+            $I->click(page::$Vacancies);
+
         $value = $I->grabTextFrom(page::$profileBalance);
         $I->waitForElementVisible(page::$addPayment,100);
         $I->click(page::$addPayment);
@@ -206,6 +212,7 @@ class jWalletCest
         $value2 = $I->grabValueFrom(page::$addPaxumControlField2);
         $I->click(page::$addPaxumBtn);
         $I->wait(3);
+        $I->executeJS("window.confirm = function(msg){return true;};");
         $value3 = $I->grabTextFrom(page::$addPaxumConfirm);
         $value4 = $I->grabTextFrom(page::$addPaxumConfirm2);
         $I->click(page::$addPaxumConfirmBtn);
@@ -217,6 +224,7 @@ class jWalletCest
         $I->wait(3);
         $value5 = $I->grabTextFrom(page::$profileBalance);
         $value6 = $I->grabTextFrom(page::$historyGrabLine);
+        $I->click(page::$EXIT);
         var_dump($value1, $value2, $value3, $value4, $value, $value5, $value6);
     }
 
@@ -272,7 +280,6 @@ class jWalletCest
         $I->canseeElement(page::$contactsBtnDisabled);
         $I->click(page::$contactsBtnActive);
     }
-
     /**
      * @param AcceptanceTester $I
      * @throws Exception
@@ -295,7 +302,10 @@ class jWalletCest
         $I->slide(page::$sliderSlide,-460,0);
         $I->click(page::$securitySaveBtn);
     }
-
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
     public function HistorySet(AcceptanceTester $I)
     {
         $I->Login($I);

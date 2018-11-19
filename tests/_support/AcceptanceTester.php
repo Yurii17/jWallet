@@ -24,17 +24,21 @@ class AcceptanceTester extends \Codeception\Actor
     public function setOfActions2($link)
     {
         $I = $this;
+        $I->wait(3);
         $I->click($link['el']);
         $I->wait(3);
         $I->seeInCurrentUrl($link['url']);
         $I->click(page::$Logo);
     }
-
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
     public function Login(AcceptanceTester $I)
     {
         $I = $this;
         $I->click(page::$LoginBtn);
-        $I->wait(2);
+        $I->waitForElementVisible(page::$LoginEmail, 100);
         $I->fillField(page::$LoginEmail, 'yurii.lobas@gmail.com');
         $I->fillField(page::$LoginPassword, '12345678');
         $I->seeInField(page::$LoginEmail, 'yurii.lobas@gmail.com');

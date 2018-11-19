@@ -77,12 +77,7 @@ class jWallet
     public static $SecurityPinModalStatusActive = '';
     public static $SecurityPinModalClose = '#tfa___BV_modal_body_ > i';
     public static $securitySaveBtn = 'div.text-center > button';
-
-
     public static $EXIT = '#__layout > div > div:nth-child(2) > header > div.user-box > div > a';
-    public static $EXITModal = '#logoutModal > div > div';
-    public static $EXITModalCancel = '#logoutModal___BV_modal_footer_ > button.btn.btn-secondary';
-    public static $EXITModalOK = '#logoutModal___BV_modal_footer_ > button.btn.btn-primary';
 
     // About company
     public static $AboutCompany = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(1)';
@@ -106,10 +101,10 @@ class jWallet
 
     // Vacancies
     public static $Vacancies = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(5)';
-    public static $vacanciesForm = 'div.col-12.col-lg-5.col-xl-4 > div > form';
-    public static $vacanciesName = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(2) > input';
-    public static $vacanciesEmail = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(3) > input';
-    public static $vacanciesComent = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(4) > textarea';
+    public static $vacanciesForm = 'div.col-12.col-lg-5 > div > form';
+    public static $vacanciesName = 'div.col-12.col-lg-5 > div > form > div:nth-child(2) > input';
+    public static $vacanciesEmail = 'div.col-12.col-lg-5 > div > form > div:nth-child(3) > input';
+    public static $vacanciesComent = 'div.col-12.col-lg-5 > div > form > div:nth-child(4) > textarea';
     public static $vacanciesBtnDisabled = 'button.btn[disabled="disabled"]';
     public static $vacanciesBtnActive = 'button.btn[type="submit"]';
 
@@ -152,7 +147,7 @@ class jWallet
     public static $addPaxumControlField2 = ' div:nth-child(3) > div > div:nth-child(5) > div > div > div.input-group-inner > input';
     public static $addPaxumConfirm = '#__layout > div > section > div.container > div > div:nth-child(2) > div > div > div:nth-child(1) > table > tbody > tr:nth-child(5) > td';
     public static $addPaxumConfirm2 = '#__layout > div > section > div.container > div > div:nth-child(2) > div > div > div:nth-child(1) > table > tbody > tr:nth-child(6) > td';
-    public static $addPaxumConfirmBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase';
+    public static $addPaxumConfirmBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase.mr-sm-5 > span';
     public static $addPaxumConfirmBtnCancel = 'button.btn.btn-danger.d-block.text-center.text-uppercase';
 
     //Money Transaction
@@ -160,8 +155,8 @@ class jWallet
     public static $moneyTransactionSum = 'div:nth-child(1) > div:nth-child(1) > div > input';
     public static $moneyTransactionSumComission = 'div:nth-child(1) > div:nth-child(3) > div > input';
     public static $moneyTransactionBtn = 'form > div:nth-child(2) > div > button';
-    public static $moneyTransactionSum1 = 'tr:nth-child(6) > td';
-    public static $moneyTransactionSumComission1 = 'tr:nth-child(7) > td';
+    public static $moneyTransactionSum1 = 'tr:nth-child(5) > td';
+    public static $moneyTransactionSumComission1 = 'tr:nth-child(6) > td';
     public static $moneyTransactionApproveBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase';
 
 
