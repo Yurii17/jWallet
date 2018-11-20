@@ -1,10 +1,22 @@
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+actor_suffix: Tester
 extensions:
     enabled:
-        - Yandex\Allure\Adapter\AllureAdapter
-    config:
-        Yandex\Allure\Adapter\AllureAdapter:
-            deletePreviousResults: false
-            outputDirectory: allure-results
-            ignoredAnnotations:
-                - env
-                - dataprovider
+        - Codeception\Extension\RunFailed
+settings:
+    strict_xml: true
+    extensions:
+        enabled:
+            - Yandex\Allure\Adapter\AllureAdapter
+        config:
+            Yandex\Allure\Adapter\AllureAdapter:
+                deletePreviousResults: false
+                outputDirectory: allure-results
+                ignoredAnnotations:
+                    - env
+                    - dataprovider
