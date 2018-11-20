@@ -156,6 +156,7 @@ class AcceptanceTester extends \Codeception\Actor
         $I->assertNotSame($value26, $value27);
         $I->click(page::$EXIT);
         $I->wait(3);
+
         var_dump($value, $value1, $value2, $value4, $value4, $value5,
             $value6, $value7, $value8, $value9, $value10, $value11,
             $value12, $value13, $value14, $value15,

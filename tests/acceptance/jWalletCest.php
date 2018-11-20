@@ -231,7 +231,6 @@ class jWalletCest
     public function RecallsSend (AcceptanceTester $I)           // Поставили кепчу
     {
         $I->click(page::$Recalls);
-        $I->seeElement(page::$recallsBtnDisabled);
         $I->wait(3);
         $value = $this->valueNames[array_rand($this->valueNames)];
         $value1 = $this->valueFalse[array_rand($this->valueFalse)];
