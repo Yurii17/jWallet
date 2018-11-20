@@ -8,5 +8,13 @@ actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+        - Yandex\Allure\Adapter\AllureAdapter
+config:
+    Yandex\Allure\Adapter\AllureAdapter:
+    deletePreviousResults: false
+    outputDirectory: allure-results
+    ignoredAnnotations:
+          - env
+          - dataprovider
 settings:
     strict_xml: true
