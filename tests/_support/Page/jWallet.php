@@ -41,6 +41,8 @@ class jWallet
 
     //Account settings
     public static $Profile = 'div.tabs-with-btn.d-flex.justify-content-between > div > nav > a:nth-child(1)';
+    public static $profileUserBtn = 'div.user-box > div > div:nth-child(2)';
+    public static $profileSettingsBtn = 'div.drop-btn.dropdown.show > div > div > div.user-name.online > a';
     public static $profileBalance = '#__layout > div > div:nth-child(2) > header > div.user-box > div > span > strong';
     public static $ProfileActive = 'div.tabs-with-btn.d-flex.justify-content-between > div > nav > a.nav-item.nav-link.active';
     public static $ProfileContent = '#__layout > div > section > div.container > div > div:nth-child(2) > div:nth-child(1) > div.tab-content > div:nth-child(1) > div > div.col-12.col-md-6.col-lg-4.border-right > div';
@@ -113,7 +115,7 @@ class jWallet
 
 
     // Contacts
-    public static $Contacts = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(6)';
+    public static $Contacts = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(5)';
     public static $contactsForm = 'div.col-12.col-lg-5.col-xl-6 > div';
     public static $contactsName = 'div.col-12.col-lg-5.col-xl-6 > div > div:nth-child(2) > input';
     public static $contactsEmail = 'div.col-12.col-lg-5.col-xl-6 > div > div:nth-child(3) > input';

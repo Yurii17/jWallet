@@ -14,14 +14,19 @@ class jWalletCest
     {
         $I->amOnPage('/');
     }
-
-
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
     // tests
     public function Login(AcceptanceTester $I)
     {
         $I->Login($I);
         $value = $I->grabTextFrom(page::$profileBalance);
         var_dump($value);
+        $I->click(page::$profileUserBtn);
+        $I->click(page::$profileSettingsBtn);
+        $I->waitForElementVisible(page::$ProfileActive);
         $I->seeElement(page::$ProfileActive);
         $I->seeElement(page::$Security);
         $I->seeElement(page::$ProfileContentItem[0]);
@@ -71,7 +76,6 @@ class jWalletCest
             ['url' => '/fees', 'el' => page::$Tariffs],
             ['url' => '/faq', 'el' => page::$FAQ],
             ['url' => '/recalls',  'el' => page::$Recalls],
-            ['url' => '/vacancies', 'el' => page::$Vacancies],
             ['url' => '/contacts', 'el' => page::$Contacts],
             ['url' => '/registration', 'el' =>page::$cabinetBtn]
         ];
@@ -248,6 +252,7 @@ class jWalletCest
      * @param AcceptanceTester $I
      * @throws Exception
      */
+    /*
     public function Vacancies(AcceptanceTester $I)              //Поставили кепчу
     {
         $I->click(page::$Vacancies);
@@ -260,6 +265,7 @@ class jWalletCest
         $I->fillField(page::$vacanciesEmail,'test@gmail.com');
         $I->click(page::$vacanciesBtnActive);
     }
+    */
     /**
      * @param AcceptanceTester $I
      * @throws Exception
@@ -283,6 +289,10 @@ class jWalletCest
     public function SliderTime(AcceptanceTester $I)
     {
         $I->Login($I);
+        $I->seeInCurrentUrl('/account/news');
+        $I->click(page::$profileUserBtn);
+        $I->click(page::$profileSettingsBtn);
+        $I->wait(2);
         $I->click(page::$Security);
         $I->wait(2);
         $before = $I->grabTextFrom(page::$sliderTime);
@@ -293,6 +303,9 @@ class jWalletCest
         $I->click(page::$EXIT);
         $I->wait(4);
         $I->Login($I);
+        $I->click(page::$profileUserBtn);
+        $I->click(page::$profileSettingsBtn);
+        $I->wait(2);
         $I->click(page::$Security);
         $I->scrollTo(page::$sliderSlide);
         $last = $I->grabTextFrom(page::$sliderTime);
