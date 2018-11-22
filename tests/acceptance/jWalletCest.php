@@ -77,7 +77,7 @@ class jWalletCest
             ['url' => '/faq', 'el' => page::$FAQ],
             ['url' => '/recalls',  'el' => page::$Recalls],
             ['url' => '/contacts', 'el' => page::$Contacts],
-            ['url' => '/registration', 'el' =>page::$cabinetBtn]
+            ['url' => '/signup', 'el' =>page::$cabinetBtn]
         ];
         foreach ($menu_links as $link ){
             $I->setOfActions2($link);
@@ -102,7 +102,7 @@ class jWalletCest
                 $I->seeElement(page::$registrationBtnActive);
                 $I->click(page::$registrationBtn);
                 $I->wait(2);
-                $I->seeInCurrentUrl('registration?email=');
+                $I->seeInCurrentUrl('signup?email=');
                 $I->seeInField(page::$registrationFieldEmail, $value2);
         var_dump ($value1, $value2);
     }
