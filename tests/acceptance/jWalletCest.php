@@ -352,6 +352,33 @@ class jWalletCest
             $I->seeElement(page::$RegistrationModal);
             var_dump($value);
     }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function BalanceVisable(AcceptanceTester $I)
+    {
+        $I->Login($I);
+        $I->waitForElementVisible(page::$profileBalance);
+        $value = $I->grabTextFrom(page::$profileBalance);
+        $I->click(page::$profileUserBtn);
+        $value1 = $I->grabTextFrom(page::$profileHideBalanceGrab);
+        $I->click(page::$profileHideBalanceBtn);
+        $I->wait(2);
+        $value2 = $I->grabTextFrom(page::$profileHideBalanceGrab);
+        $I->click(page::$profileUserBtn);
+        $I->wait(2);
+        $value3 = $I->grabTextFrom(page::$profileBalance);
+        $I->assertSame($value, $value1);
+        $I->assertSame($value2, $value3);
+        $I->click(page::$profileUserBtn);
+        $I->wait(2);
+        $I->click(page::$profileHideBalanceBtn);
+        $I->click(page::$EXIT);
+        $I->wait(2);
+
+        var_dump($value, $value1, $value2, $value3);
+    }
 
 
 
