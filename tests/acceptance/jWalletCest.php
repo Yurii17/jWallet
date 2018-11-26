@@ -75,7 +75,6 @@ class jWalletCest
             ['url' => '/', 'el' => page::$AboutCompany],
             ['url' => '/fees', 'el' => page::$Tariffs],
             ['url' => '/faq', 'el' => page::$FAQ],
-            ['url' => '/recalls',  'el' => page::$Recalls],
             ['url' => '/contacts', 'el' => page::$Contacts],
             ['url' => '/signup', 'el' =>page::$cabinetBtn]
         ];
@@ -147,7 +146,7 @@ class jWalletCest
     {
         $I->executeJS("window.confirm = function(msg){return true;};");
         $I->Login($I);
-        $I->click(page::$Recalls);
+        $I->click(page::$payService);
         $value = $I->grabTextFrom(page::$profileBalance);
         $I->wait(3);
         $I->fillField(page::$payServiceURL,'https://jw3.zxczxc.cc/account/service-payment');
@@ -168,16 +167,24 @@ class jWalletCest
         $value3 = $I->grabTextFrom(page::$payServiceApproveSum);
         $value4 = $I->grabTextFrom(page::$payServiceApproveSum2);
         $I->click(page::$payServiceApproveBtn);
+        $I->wait(2);
+        $value5 = $I->grabTextFrom(page::$payServiceApproveSum);
+        $value6 = $I->grabTextFrom(page::$payServiceApproveSum2);
+        $I->assertSame($value3, $value5);
+        $I->assertSame($value4, $value6);
+        $I->click(page::$payServiceStatusBtn);
         $I->waitForElementVisible(page::$historyFilter, 100);
         $I->amOnPage('/account/history');
         $I->seeElement(page::$historyFilter);
         $I->click(page::$historyID);
         $I->wait(3);
-        $value5 = $I->grabTextFrom(page::$profileBalance);
-        $value6 = $I->grabTextFrom(page::$historyGrabLine);
-        var_dump($value1, $value2, $value3, $value4, $value5, $value, $value6);
+        $value7 = $I->grabTextFrom(page::$profileBalance);
+        $value8 = $I->grabTextFrom(page::$historyGrabLine);
         $I->click(page::$EXIT);
-        $I->assertNotSame($value,$value5);
+        $I->assertNotSame($value,$value7);
+
+        var_dump($value1, $value2, $value3, $value4, $value, $value7, $value8);
+
     }
     /**
      * @param AcceptanceTester $I
@@ -186,12 +193,12 @@ class jWalletCest
     public function MassTransaction(AcceptanceTester $I)
     {
         $I->Login($I);
-        $value01 = $I->waitForElementVisible(page::$Vacancies,5);
+        $value01 = $I->waitForElementVisible(page::$Recalls,5);
 
             if ($value01 == false)
                 $I->reloadPage('/');
             else($value01 == true);
-            $I->click(page::$Vacancies);
+            $I->click(page::$Recalls);
 
         $value = $I->grabTextFrom(page::$profileBalance);
         $I->waitForElementVisible(page::$addPayment,100);
@@ -215,24 +222,31 @@ class jWalletCest
         $I->fillField(page::$addPaxumSum2,'20');
         $value2 = $I->grabValueFrom(page::$addPaxumControlField2);
         $I->click(page::$addPaxumBtn);
-        $I->wait(3);
         $I->executeJS("window.confirm = function(msg){return true;};");
+        $I->wait(3);
         $value3 = $I->grabTextFrom(page::$addPaxumConfirm);
         $value4 = $I->grabTextFrom(page::$addPaxumConfirm2);
         $I->click(page::$addPaxumConfirmBtn);
+        $I->wait(2);
+        $value5 = $I->grabTextFrom(page::$addPaxumStatusConfirm);
+        $value6 = $I->grabTextFrom(page::$addPaxumStatusConfirm2);
+        $I->assertSame($value3, $value5);
+        $I->assertNotSame($value4, $value6);
+        $I->click(page::$payServiceStatusBtn);
         $I->wait(4);
         $I->seeInCurrentUrl('history');
         $I->amOnPage('/account/history');
         $I->seeElement(page::$historyFilter);
         $I->click(page::$historyID);
         $I->wait(3);
-        $value5 = $I->grabTextFrom(page::$profileBalance);
-        $value6 = $I->grabTextFrom(page::$historyGrabLine);
+        $value7 = $I->grabTextFrom(page::$profileBalance);
+        $value8 = $I->grabTextFrom(page::$historyGrabLine);
         $I->click(page::$EXIT);
-        var_dump($value1, $value2, $value3, $value4, $value, $value5, $value6);
-    }
 
-    public function RecallsSend (AcceptanceTester $I)           // Поставили кепчу
+        var_dump($value1, $value2, $value3, $value4, $value, $value7, $value8);
+    }
+    /*
+    public function RecallsSend (AcceptanceTester $I)           // Поставили кепчу  // Поки зняли
     {
         $I->click(page::$Recalls);
         $I->wait(3);
@@ -248,12 +262,8 @@ class jWalletCest
         $value4 = $I->grabTextFrom(page::$recallsGrabDate);
         var_dump ($value, $value1, $value2, $value3, $value4);
     }
-    /**
-     * @param AcceptanceTester $I
-     * @throws Exception
-     */
-    /*
-    public function Vacancies(AcceptanceTester $I)              //Поставили кепчу
+
+    public function Vacancies(AcceptanceTester $I)              //Поставили кепчу // Поки зняли
     {
         $I->click(page::$Vacancies);
         $I->waitForElementVisible(page::$vacanciesForm);
@@ -324,7 +334,7 @@ class jWalletCest
     public function HistorySet(AcceptanceTester $I)
     {
         $I->Login($I);
-        $I->click(page::$FAQ);
+        $I->click(page::$historyLink);
         $I->amOnPage('/account/history');
         $I->HistorySet($I);
     }

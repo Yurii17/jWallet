@@ -93,10 +93,10 @@ class jWallet
     public static $Tariffs = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(2)';
 
     // FAQ
-    public static $FAQ = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(3)';
+    public static $FAQ = 'div:nth-child(2) > header > nav > ul > li:nth-child(3)';
 
     // Recalls
-    public static $Recalls = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(4)';
+    public static $Recalls = 'div:nth-child(2) > header > nav > ul > li:nth-child(4)';
     public static $recallsName = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(2) > input';
     public static $recallsEmail = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(3) > input';
     public static $recallsComent = 'div.col-12.col-lg-5.col-xl-4 > div > form > div:nth-child(4) > textarea';
@@ -107,7 +107,7 @@ class jWallet
 
 
     // Vacancies
-    public static $Vacancies = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(5)';
+    public static $Vacancies = 'div:nth-child(2) > header > nav > ul > li:nth-child(5)';
     public static $vacanciesForm = 'div.col-12.col-lg-5 > div > form';
     public static $vacanciesName = 'div.col-12.col-lg-5 > div > form > div:nth-child(2) > input';
     public static $vacanciesEmail = 'div.col-12.col-lg-5 > div > form > div:nth-child(3) > input';
@@ -117,7 +117,7 @@ class jWallet
 
 
     // Contacts
-    public static $Contacts = '#__layout > div > div:nth-child(2) > header > nav > ul > li:nth-child(5)';
+    public static $Contacts = 'div:nth-child(2) > header > nav > ul > li:nth-child(4)';
     public static $contactsForm = 'div.col-12.col-lg-5.col-xl-6 > div';
     public static $contactsName = 'div.col-12.col-lg-5.col-xl-6 > div > div:nth-child(2) > input';
     public static $contactsEmail = 'div.col-12.col-lg-5.col-xl-6 > div > div:nth-child(3) > input';
@@ -143,7 +143,6 @@ class jWallet
         'a:nth-child(5)',
         'a:nth-child(6)'
         ];
-
     public static $addPaxum = '#__layout > div > section > div.container > div > div:nth-child(2) > form > div.text-center > div > div > a:nth-child(1)';
     public static $addPaxumEmail = 'div.col-12.col-sm-6.col-lg-3 > div > input';
     public static $addPaxumSum = 'div.input-group-inner > input';
@@ -152,10 +151,15 @@ class jWallet
     public static $addPaxumEmail2 = ' div:nth-child(3) > div > div.col-12.col-sm-6.col-lg-3 > div > input';
     public static $addPaxumSum2 = '#__layout > div > section > div.container > div > div:nth-child(2) > form > div.content-box.payments > div > div:nth-child(3) > div > div:nth-child(4) > div > div > div.input-group-inner > input';
     public static $addPaxumControlField2 = ' div:nth-child(3) > div > div:nth-child(5) > div > div > div.input-group-inner > input';
-    public static $addPaxumConfirm = '#__layout > div > section > div.container > div > div:nth-child(2) > div > div > div:nth-child(1) > table > tbody > tr:nth-child(5) > td';
-    public static $addPaxumConfirm2 = '#__layout > div > section > div.container > div > div:nth-child(2) > div > div > div:nth-child(1) > table > tbody > tr:nth-child(6) > td';
+    public static $addPaxumConfirm = 'div:nth-child(1) > table > tbody > tr:nth-child(5) > td';
+    public static $addPaxumConfirm2 = 'div:nth-child(1) > table > tbody > tr:nth-child(6) > td';
+    public static $addPaxumStatusConfirm = 'div:nth-child(2) > table > tbody > tr:nth-child(5) > td';
+    public static $addPaxumStatusConfirm2 = 'div:nth-child(2) > table > tbody > tr:nth-child(6) > td';
+
     public static $addPaxumConfirmBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase.mr-sm-5 > span';
     public static $addPaxumConfirmBtnCancel = 'button.btn.btn-danger.d-block.text-center.text-uppercase';
+
+
 
     //Money Transaction
     public static $moneyTransactionExmo = 'div:nth-child(2) > div > div > div:nth-child(4) > a';
@@ -168,10 +172,10 @@ class jWallet
 
 
 
-    //Transaction History or FAQ
+    //Transaction History
+    public static $historyLink = 'div:nth-child(2) > header > nav > ul > li:nth-child(5) > a';
     public static $historyFilter = 'div.content-box.history';
     public static $historyBtn = '#__layout > div > section > div.container > div > div:nth-child(2) > div.table-history > div.pagination-box > ul > li:nth-child(9) > a';
-
     public static $historyFilterDate = 'div.table-history > div.table > div.d-flex.head > div:nth-child(4)';
     public static $historyFilterTypeDrop = 'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(3) > div > div > div';
     public static $historyFilterTypeInput = 'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(3) > div > div > div > ul > li:nth-child(3)';
@@ -195,7 +199,8 @@ class jWallet
         'div:nth-child(2) > div > div > div > ul > li:nth-child(4)',
         'div:nth-child(2) > div > div > div > ul > li:nth-child(5)',
         'div:nth-child(2) > div > div > div > ul > li:nth-child(6)',
-        'div:nth-child(2) > div > div > div > ul > li:nth-child(7)'
+        'div:nth-child(2) > div > div > div > ul > li:nth-child(7)',
+        'div:nth-child(2) > div > div > div > ul > li:nth-child(8)'
         ];
     public static $historySystemPayCol = 'div.table-history > div.table > div.body > div:nth-child(1) > div > div:nth-child(3)';
     public static $historyGrabLine = 'div.body > div:nth-child(1)';
@@ -209,6 +214,7 @@ class jWallet
     public static $sliderSlide = 'div.scroll-time.vue-slider-component.vue-slider-horizontal.vue-slider-has-label > div > div.vue-slider-always.vue-slider-dot';
 
     //Pay Service
+    public static $payService = 'div:nth-child(2) > header > nav > ul > li:nth-child(3)';
     public static $payServiceURL = '#url';
     public static $payServiceDescription = '#description';
     public static $payServiceDrop = 'div:nth-child(4) > div > div:nth-child(1) > div > div > div > div > div > div';
@@ -224,6 +230,8 @@ class jWallet
     public static $payServiceApproveSum = 'tr:nth-child(6) > td';
     public static $payServiceApproveSum2 = 'tr:nth-child(7) > td';
     public static $payServiceApproveBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase';
+    public static $payServiceStatusBtn = 'button.btn.btn-danger.d-block.text-center.text-uppercase';
+
 
 
 

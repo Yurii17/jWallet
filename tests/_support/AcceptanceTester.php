@@ -106,54 +106,54 @@ class AcceptanceTester extends \Codeception\Actor
         $I->assertNotSame($value12, $value13);
         $I->reloadPage('/account/history');
         $I->click(page::$historyFilterSystemPayDrop);
-        $value14 = $I->grabTextFrom(page::$historyFilterSystemPay[0]);       // Paxum
+        $value14 = $I->grabTextFrom(page::$historyFilterSystemPay[0]);       // Все Системи
         $I->click(page::$historyFilterSystemPay[0]);
         $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
         $value15 = $I->grabTextFrom(page::$historySystemPayCol);
         $I->assertNotSame($value14, $value15);
         $I->click(page::$historyFilterSystemPayDrop);
-        $value16 = $I->grabTextFrom(page::$historyFilterSystemPay[1]);       // Advanced Cash - Empty Result
+        $value16 = $I->grabTextFrom(page::$historyFilterSystemPay[1]);       // Paxum
         $I->click(page::$historyFilterSystemPay[1]);
         $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
-        $value17 = $I->grabTextFrom(page::$historyFilterEmptyValue);
-        $I->assertNotSame($value16, $value17);
+        $value17 = $I->grabTextFrom(page::$historySystemPayCol);
+        $I->assertSame($value16, $value17);                                  // Paxum Paxum
         $I->click(page::$historyFilterSystemPayDrop);
-        $value18 = $I->grabTextFrom(page::$historyFilterSystemPay[2]);       // WebMoney - WM
+        $value18 = $I->grabTextFrom(page::$historyFilterSystemPay[2]);       // Advanced Cash
         $I->click(page::$historyFilterSystemPay[2]);
         $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
-        $value19 = $I->grabTextFrom(page::$historySystemPayCol);
+        $value19 = $I->grabTextFrom(page::$historyFilterEmptyValue);         // Advanced Cash - Empty Result
         $I->assertNotSame($value18, $value19);
         $I->click(page::$historyFilterSystemPayDrop);
-        $value20 = $I->grabTextFrom(page::$historyFilterSystemPay[3]);       // Capitalist - Empty Result
+        $value20 = $I->grabTextFrom(page::$historyFilterSystemPay[3]);       // WebMoney
         $I->click(page::$historyFilterSystemPay[3]);
         $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
-        $value21 = $I->grabTextFrom(page::$historyFilterEmptyValue);
-        $I->assertNotSame($value20, $value21);
+        $value21 = $I->grabTextFrom(page::$historySystemPayCol);             // WebMoney
+        $I->assertSame($value20, $value21);
         $I->click(page::$historyFilterSystemPayDrop);
-        $value22 = $I->grabTextFrom(page::$historyFilterSystemPay[4]);       // Perfect Money - PM
+        $value22 = $I->grabTextFrom(page::$historyFilterSystemPay[4]);       // Capitalist
         $I->click(page::$historyFilterSystemPay[4]);
         $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
-        $value23 = $I->grabTextFrom(page::$historySystemPayCol);
-        $I->assertNotSame($value22, $value23);
+        $value23 = $I->grabTextFrom(page::$historyFilterEmptyValue);
+        $I->assertNotSame($value22, $value23);                               // Capitalist - Empty Result
         $I->click(page::$historyFilterSystemPayDrop);
-        $value24 = $I->grabTextFrom(page::$historyFilterSystemPay[5]);       // ePayments - EPM
+        $value24 = $I->grabTextFrom(page::$historyFilterSystemPay[5]);       // Perfect Money
         $I->click(page::$historyFilterSystemPay[5]);
         $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
         $value25 = $I->grabTextFrom(page::$historySystemPayCol);
-        $I->assertNotSame($value24, $value25);
+        $I->assertSame($value24, $value25);                                  // Perfect Money
         $I->click(page::$historyFilterSystemPayDrop);
         $value26 = $I->grabTextFrom(page::$historyFilterSystemPay[6]);       // PayPal - PP
         $I->click(page::$historyFilterSystemPay[6]);
         $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
         $value27 = $I->grabTextFrom(page::$historySystemPayCol);
-        $I->assertNotSame($value26, $value27);
+        $I->assertSame($value26, $value27);
         $I->click(page::$EXIT);
         $I->wait(3);
 
