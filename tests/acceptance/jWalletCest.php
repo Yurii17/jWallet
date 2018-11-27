@@ -127,6 +127,12 @@ class jWalletCest
         $value1 = $I->grabTextFrom(page::$moneyTransactionSum1);
         $value2 = $I->grabTextFrom(page::$moneyTransactionSumComission1);
         $I->click(page::$moneyTransactionApproveBtn);
+        $I->wait(2);
+        $value3 = $I->grabTextFrom(page::$moneyTransactionSum1);
+        $value4 = $I->grabTextFrom(page::$moneyTransactionSumComission1);
+        $I->assertSame($value1, $value3);
+        $I->assertSame($value2, $value4);
+        $I->click(page::$moneyTransactionStatusBtn);
         $I->waitForElementVisible(page::$historyFilter, 100);
         $I->amOnPage('/account/history');
         $I->seeElement(page::$historyFilter);

@@ -169,7 +169,7 @@ class jWallet
     public static $moneyTransactionSum1 = 'tr:nth-child(5) > td';
     public static $moneyTransactionSumComission1 = 'tr:nth-child(6) > td';
     public static $moneyTransactionApproveBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase';
-
+    public static $moneyTransactionStatusBtn = 'button.btn.btn-danger.d-block.text-center.text-uppercase';
 
 
     //Transaction History

@@ -61,7 +61,7 @@ class AcceptanceTester extends \Codeception\Actor
         $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
         $value1 = $I->grabTextFrom(page::$historyGrabLine);                 // Грабаэться цілий рядок
-        $I->assertSame($value, $value1);
+        $I->assertNotSame($value, $value1);
         $I->click(page::$historyFilterTypeStatus);
         $value2 = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);  // Не подтвержден
         $I->click(page::$historyFilterTypeStatusDrop[0]);
@@ -155,7 +155,7 @@ class AcceptanceTester extends \Codeception\Actor
         $value27 = $I->grabTextFrom(page::$historySystemPayCol);
         $I->assertSame($value26, $value27);
         $I->click(page::$EXIT);
-        $I->wait(3);
+        $I->wait(4);
 
         var_dump($value, $value1, $value2, $value4, $value4, $value5,
             $value6, $value7, $value8, $value9, $value10, $value11,
