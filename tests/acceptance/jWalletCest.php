@@ -395,6 +395,31 @@ class jWalletCest
 
         var_dump($value, $value1, $value2, $value3);
     }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function SliderElement(AcceptanceTester $I)
+    {
+        $I->wait(4);
+        $before = $I->grabTextFrom(page::$sliderGrabElement);
+        $I->click(page::$sliderNextBtn);
+        $I->waitForElementChange(page::$sliderElementChange, function(WebDriverElement $el) {
+            return $el->isDisplayed();
+        }, 100);
+        $after = $I->grabTextFrom(page::$sliderGrabElement);
+        $I->assertNotSame($before,$after);
+        $I->wait(2);
+        $before1 = $I->grabTextFrom(page::$sliderGrabElement);
+        $I->click(page::$sliderPrevBtn);
+        $I->waitForElementChange(page::$sliderElementChange, function(WebDriverElement $el) {
+            return $el->isDisplayed();
+        }, 100);
+        $after1 = $I->grabTextFrom(page::$sliderGrabElement);
+        $I->assertNotSame($before1,$after1);
+    }
+
+    
 
 
 

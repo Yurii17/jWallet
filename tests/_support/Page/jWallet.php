@@ -233,6 +233,16 @@ class jWallet
     public static $payServiceStatusBtn = 'button.btn.btn-danger.d-block.text-center.text-uppercase';
 
 
+    // Slider
+    public static $sliderGrabElement = '#carousel1___BV_inner_';
+    public static $sliderElementChange = '#carousel1';
+    public static $sliderPrevBtn = '#carousel1 > a.carousel-control-prev';
+    public static $sliderNextBtn = '#carousel1 > a.carousel-control-next';
+
+
+
+
+
 
 
 
