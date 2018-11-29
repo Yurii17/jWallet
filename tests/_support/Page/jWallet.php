@@ -205,7 +205,7 @@ class jWallet
     public static $historySystemPayCol = 'div.table-history > div.table > div.body > div:nth-child(1) > div > div:nth-child(3)';
     public static $historyGrabLine = 'div.body > div:nth-child(1)';
     public static $historyID = 'div.d-flex.head > div:nth-child(1)';
-    public static $historyStatusCol = 'div.table-history > div.table > div.body > div:nth-child(1) > div > div:nth-child(5)';
+    public static $historyStatusCol = 'div [class="d-flex operation-row"] > div:nth-child(5) > span';
     public static $historyBalance = 'div.table-history > div.table > div.d-flex.head > div:nth-child(7)';
 
 

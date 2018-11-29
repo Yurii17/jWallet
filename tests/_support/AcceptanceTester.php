@@ -52,14 +52,15 @@ class AcceptanceTester extends \Codeception\Actor
         $I = $this;
         $value = $I->grabTextFrom(page::$historyGrabLine);
         $I->click(page::$historyFilterTypeDrop);
-        $I->click(page::$historyFilterTypeInput);                           // Входящий
-        $I->wait(2);
-        $I->seeElement(page::$historyFilterEmptyValue);                     // Пусте значення поки
-        $I->click(page::$historyFilterTypeDrop);
         $I->click(page::$historyFilterTypeOutput);                          // Исходящий
         $I->wait(2);
         $value1 = $I->grabTextFrom(page::$historyGrabLine);                 // Грабаэться цілий рядок
-        $I->assertSame($value, $value1);
+        $I->assertNotSame($value, $value1);
+        $I->click(page::$historyFilterTypeDrop);
+        $I->click(page::$historyFilterTypeInput);                           // Входящий
+        $I->wait(2);
+        $I->seeElement(page::$historyFilterEmptyValue);                     // Пусте значення поки
+        $I->reloadPage('/account/history');
         $I->click(page::$historyFilterTypeStatus);
         $value2 = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);  // Не подтвержден
         $I->click(page::$historyFilterTypeStatusDrop[0]);
