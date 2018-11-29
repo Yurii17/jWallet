@@ -418,6 +418,35 @@ class jWalletCest
         $after1 = $I->grabTextFrom(page::$sliderGrabElement);
         $I->assertNotSame($before1,$after1);
     }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function OpenTransactionHistory(AcceptanceTester $I)
+    {
+        $I->Login($I);
+        $I->click(page::$historyLink);
+        $I->amOnPage('/account/history');
+        $I->click(page::$historyFilterTypeStatus);
+        $value = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);
+        $I->click(page::$historyFilterTypeStatusDrop[0]);
+        $I->wait(2);
+        $I->click(page::$historyFilterSystemPayDrop);
+        $value1 = $I->grabTextFrom(page::$historyFilterSystemPay[1]);
+        $I->click(page::$historyFilterSystemPay[1]);
+        $I->wait(2);
+        $value2 = $I->grabTextFrom(page::$historyFilterTypeStatus);
+        $I->click(page::$historyFilterRow);
+        $I->wait(2);
+        $I->seeElement(page::$historyFilterRovOpenBtn);
+        $value3 = $I->grabTextFrom(page::$historyFilterRovOpenGrabSystem);
+        $value4 = $I->grabTextFrom(page::$historyFilterRovOpenGrabSum).
+            $I->grabTextFrom(page::$historyFilterRovOpenGrabSum2);
+        $I->assertSame($value, $value2);
+        $I->assertSame($value1, $value3);
+        var_dump($value, $value2, $value1, $value3, $value4);
+    }
+
 
     
 

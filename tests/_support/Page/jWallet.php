@@ -207,6 +207,11 @@ class jWallet
     public static $historyID = 'div.d-flex.head > div:nth-child(1)';
     public static $historyStatusCol = 'div [class="d-flex operation-row"] > div:nth-child(5) > span';
     public static $historyBalance = 'div.table-history > div.table > div.d-flex.head > div:nth-child(7)';
+    public static $historyFilterRow = 'div.table-history > div > div.body > div:nth-child(1) > div';
+    public static $historyFilterRovOpenBtn = 'button.btn';
+    public static $historyFilterRovOpenGrabSystem = 'div:nth-child(1) > strong';
+    public static $historyFilterRovOpenGrabSum = 'div:nth-child(3) > strong';
+    public static $historyFilterRovOpenGrabSum2 = 'div:nth-child(4) > strong';
 
 
     //Slider Time
