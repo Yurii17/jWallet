@@ -442,10 +442,14 @@ class jWalletCest
         $value3 = $I->grabTextFrom(page::$historyFilterRovOpenGrabSystem);
         $value4 = $I->grabTextFrom(page::$historyFilterRovOpenGrabSum).
             $I->grabTextFrom(page::$historyFilterRovOpenGrabSum2);
+        $I->click(page::$EXIT);
+        $I->wait(3);
         $I->assertSame($value, $value2);
         $I->assertSame($value1, $value3);
         var_dump($value, $value2, $value1, $value3, $value4);
     }
+
+    
 
 
     
