@@ -448,8 +448,37 @@ class jWalletCest
         $I->assertSame($value1, $value3);
         var_dump($value, $value2, $value1, $value3, $value4);
     }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function SearchHistoryFilter(AcceptanceTester $I)
+    {
+        $I->Login($I);
+        $I->click(page::$historyLink);
+        $I->amOnPage('/account/history');
+        $I->click(page::$historyFilterTypeStatus);
+        $value = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);
+        $I->click(page::$historyFilterTypeStatusDrop[0]);
+        $I->wait(2);
+        $I->fillField(page::$historyFieldSearch, 'Mass');
+        $I->click(page::$historyFilterRefreshBtn);
+        $I->wait(2);
+        $value1 = $I->grabTextFrom(page::$historySystemPayCol);
+        $I->click(page::$historyFilterRow);
+        $value2 = $I->grabTextFrom(page::$historyFilterRovOpenGrabSystem);
+        $I->click(page::$historyFilterRovOpenListBtn);
+        $I->waitForElementVisible(page::$historyFilterRovOpenListModal, 20);
+        $value3 = $I->grabTextFrom(page::$historyFilterRovOpenListModalGrab);
+        $I->click(page::$historyFilterRovOpenListModalClose);
+        $I->click(page::$EXIT);
+        $I->wait(3);
+        $I->assertSame($value1, $value2);
+        $I->assertSame($value2, $value3);
+        var_dump($value, $value1, $value2);
 
-    
+    }
+
 
 
     

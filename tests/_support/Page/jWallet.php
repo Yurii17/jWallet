@@ -176,6 +176,7 @@ class jWallet
     public static $historyLink = 'div:nth-child(2) > header > nav > ul > li:nth-child(5) > a';
     public static $historyFilter = 'div.content-box.history';
     public static $historyBtn = '#__layout > div > section > div.container > div > div:nth-child(2) > div.table-history > div.pagination-box > ul > li:nth-child(9) > a';
+    public static $historyFieldSearch = 'div.col-12.col-xl-5.d-flex.justify-content-around.align-items-end.padding-l-n.filter-bottom > div:nth-child(2) > input';
     public static $historyFilterDate = 'div.table-history > div.table > div.d-flex.head > div:nth-child(4)';
     public static $historyFilterTypeDrop = 'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(3) > div > div > div';
     public static $historyFilterTypeInput = 'div.col-12.col-xl-7.d-flex.justify-content-around.align-items-end.padding-r-n.filter-top > div:nth-child(3) > div > div > div > ul > li:nth-child(3)';
@@ -209,9 +210,15 @@ class jWallet
     public static $historyBalance = 'div.table-history > div.table > div.d-flex.head > div:nth-child(7)';
     public static $historyFilterRow = 'div.table-history > div > div.body > div:nth-child(1) > div';
     public static $historyFilterRovOpenBtn = 'button.btn';
+    public static $historyFilterRovOpenListBtn = 'div.history-details > div:nth-child(5) > button';
+    public static $historyFilterRovOpenListModal = '#infoModal > div > div';
+    public static $historyFilterRovOpenListModalGrab = 'tr:nth-child(4) > td';
+    public static $historyFilterRovOpenListModalClose = '#infoModal___BV_modal_header_ > button';
     public static $historyFilterRovOpenGrabSystem = 'div:nth-child(1) > strong';
     public static $historyFilterRovOpenGrabSum = 'div:nth-child(3) > strong';
     public static $historyFilterRovOpenGrabSum2 = 'div:nth-child(4) > strong';
+
+
 
 
     //Slider Time
