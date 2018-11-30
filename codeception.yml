@@ -16,4 +16,4 @@ settings:
         config:
             Yandex\Allure\Adapter\AllureAdapter:
                 deletePreviousResults: false
-                outputDirectory: tests/_output/allure-results
+                outputDirectory: allure-results
