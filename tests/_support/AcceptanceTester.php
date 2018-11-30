@@ -55,7 +55,7 @@ class AcceptanceTester extends \Codeception\Actor
         $I->click(page::$historyFilterTypeOutput);                          // Исходящий
         $I->wait(2);
         $value1 = $I->grabTextFrom(page::$historyGrabLine);                 // Грабаэться цілий рядок
-        $I->assertNotSame($value, $value1);
+        $I->assertSame($value, $value1);
         $I->click(page::$historyFilterTypeDrop);
         $I->click(page::$historyFilterTypeInput);                           // Входящий
         $I->wait(2);
@@ -106,29 +106,29 @@ class AcceptanceTester extends \Codeception\Actor
         $value15 = $I->grabTextFrom(page::$historySystemPayCol);
         $I->assertNotSame($value14, $value15);
         $I->click(page::$historyFilterSystemPayDrop);
-        $value16 = $I->grabTextFrom(page::$historyFilterSystemPay[1]);       // Paxum
+        $value16 = $I->grabTextFrom(page::$historyFilterSystemPay[1]);       // jWallet
         $I->click(page::$historyFilterSystemPay[1]);
         $I->wait(2);
         $value17 = $I->grabTextFrom(page::$historySystemPayCol);
-        $I->assertSame($value16, $value17);                                  // Paxum Paxum
+        $I->assertSame($value16, $value17);                                  // jWallet
         $I->click(page::$historyFilterSystemPayDrop);
-        $value18 = $I->grabTextFrom(page::$historyFilterSystemPay[2]);       // Advanced Cash
+        $value18 = $I->grabTextFrom(page::$historyFilterSystemPay[2]);       // Bitcoin
         $I->click(page::$historyFilterSystemPay[2]);
         $I->wait(2);
-        $value19 = $I->grabTextFrom(page::$historyFilterEmptyValue);         // Advanced Cash - Empty Result
+        $value19 = $I->grabTextFrom(page::$historyFilterEmptyValue);         // Bitcoin - Empty Result
         $I->assertNotSame($value18, $value19);
-        $I->click(page::$historyFilterSystemPayDrop);
-        $value20 = $I->grabTextFrom(page::$historyFilterSystemPay[3]);       // WebMoney
+        /*$I->click(page::$historyFilterSystemPayDrop);
+        $value20 = $I->grabTextFrom(page::$historyFilterSystemPay[3]);       // BTC-E USD kod
         $I->click(page::$historyFilterSystemPay[3]);
         $I->wait(2);
-        $value21 = $I->grabTextFrom(page::$historySystemPayCol);             // WebMoney
+        $value21 = $I->grabTextFrom(page::$historySystemPayCol);             // BTC-E USD kod
         $I->assertSame($value20, $value21);
         $I->click(page::$historyFilterSystemPayDrop);
-        $value22 = $I->grabTextFrom(page::$historyFilterSystemPay[4]);       // Capitalist
+        $value22 = $I->grabTextFrom(page::$historyFilterSystemPay[4]);       // Paxum
         $I->click(page::$historyFilterSystemPay[4]);
         $I->wait(2);
         $value23 = $I->grabTextFrom(page::$historyFilterEmptyValue);
-        $I->assertNotSame($value22, $value23);                               // Capitalist - Empty Result
+        $I->assertNotSame($value22, $value23);                               // Paxum - Empty Result
         $I->click(page::$historyFilterSystemPayDrop);
         $value24 = $I->grabTextFrom(page::$historyFilterSystemPay[5]);       // Perfect Money
         $I->click(page::$historyFilterSystemPay[5]);
@@ -141,15 +141,16 @@ class AcceptanceTester extends \Codeception\Actor
         $I->wait(2);
         $value27 = $I->grabTextFrom(page::$historySystemPayCol);
         $I->assertSame($value26, $value27);
+        */
         $I->click(page::$EXIT);
         $I->wait(4);
 
         var_dump($value, $value1, $value2, $value4, $value4, $value5,
             $value6, $value7, $value8, $value9, $value10, $value11,
             $value12, $value13, $value14, $value15,
-            $value16, $value17, $value18, $value19,
-            $value20, $value21, $value22, $value23,
-            $value24, $value25, $value26, $value27);
+            $value16, $value17, $value18, $value19
+            /*$value20, $value21, $value22, $value23,
+            $value24, $value25, $value26, $value27*/);
     }
 
 

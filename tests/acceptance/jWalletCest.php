@@ -199,12 +199,12 @@ class jWalletCest
     public function MassTransaction(AcceptanceTester $I)
     {
         $I->Login($I);
-        $value01 = $I->waitForElementVisible(page::$Recalls,5);
+        $value01 = $I->waitForElementVisible(page::$MassTransaction,5);
 
             if ($value01 == false)
                 $I->reloadPage('/');
             else($value01 == true);
-            $I->click(page::$Recalls);
+            $I->click(page::$MassTransaction);
 
         $value = $I->grabTextFrom(page::$profileBalance);
         $I->waitForElementVisible(page::$addPayment,100);
@@ -395,10 +395,10 @@ class jWalletCest
 
         var_dump($value, $value1, $value2, $value3);
     }
-    /**
+    /*/**
      * @param AcceptanceTester $I
      * @throws Exception
-     */
+
     public function SliderElement(AcceptanceTester $I)
     {
         $I->wait(4);
@@ -418,6 +418,7 @@ class jWalletCest
         $after1 = $I->grabTextFrom(page::$sliderGrabElement);
         $I->assertNotSame($before1,$after1);
     }
+    */
     /**
      * @param AcceptanceTester $I
      * @throws Exception
@@ -431,10 +432,10 @@ class jWalletCest
         $value = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);
         $I->click(page::$historyFilterTypeStatusDrop[0]);
         $I->wait(2);
-        $I->click(page::$historyFilterSystemPayDrop);
-        $value1 = $I->grabTextFrom(page::$historyFilterSystemPay[1]);
-        $I->click(page::$historyFilterSystemPay[1]);
+        $I->fillField(page::$historyFieldSearch, 'Px');
+        $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
+        $value1 = $I->grabValueFrom(page::$historyFieldSearch);
         $value2 = $I->grabTextFrom(page::$historyFilterTypeStatus);
         $I->click(page::$historyFilterRow);
         $I->wait(2);
@@ -445,8 +446,8 @@ class jWalletCest
         $I->click(page::$EXIT);
         $I->wait(3);
         $I->assertSame($value, $value2);
-        $I->assertSame($value1, $value3);
-        var_dump($value, $value2, $value1, $value3, $value4);
+        $I->assertNotSame($value1, $value3);
+        var_dump($value4);
     }
     /**
      * @param AcceptanceTester $I
@@ -475,7 +476,7 @@ class jWalletCest
         $I->wait(3);
         $I->assertSame($value1, $value2);
         $I->assertSame($value2, $value3);
-        var_dump($value, $value1, $value2);
+        var_dump($value);
 
     }
 

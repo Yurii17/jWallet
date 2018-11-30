@@ -134,6 +134,7 @@ class jWallet
 
 
     //Mass transfer
+    public static $MassTransaction = 'div:nth-child(2) > header > nav > ul > li:nth-child(5)';
     public static $addPayment = 'div:nth-child(2) > form > div.text-center > div';
     public static $addPaymentDrop = [
         '#__layout > div > section > div.container > div > div:nth-child(2) > form > div.text-center > div > div > a:nth-child(1)',
@@ -173,7 +174,7 @@ class jWallet
 
 
     //Transaction History
-    public static $historyLink = 'div:nth-child(2) > header > nav > ul > li:nth-child(5) > a';
+    public static $historyLink = 'div:nth-child(2) > header > nav > ul > li:nth-child(3)';
     public static $historyFilter = 'div.content-box.history';
     public static $historyBtn = '#__layout > div > section > div.container > div > div:nth-child(2) > div.table-history > div.pagination-box > ul > li:nth-child(9) > a';
     public static $historyFieldSearch = 'div.col-12.col-xl-5.d-flex.justify-content-around.align-items-end.padding-l-n.filter-bottom > div:nth-child(2) > input';
@@ -226,7 +227,7 @@ class jWallet
     public static $sliderSlide = 'div.scroll-time.vue-slider-component.vue-slider-horizontal.vue-slider-has-label > div > div.vue-slider-always.vue-slider-dot';
 
     //Pay Service
-    public static $payService = 'div:nth-child(2) > header > nav > ul > li:nth-child(3)';
+    public static $payService = 'div:nth-child(2) > header > nav > ul > li:nth-child(4)';
     public static $payServiceURL = '#url';
     public static $payServiceDescription = '#description';
     public static $payServiceDrop = 'div:nth-child(4) > div > div:nth-child(1) > div > div > div > div > div > div';
