@@ -117,7 +117,7 @@ class jWallet
 
 
     // Contacts
-    public static $Contacts = 'div:nth-child(2) > header > nav > ul > li:nth-child(4)';
+    public static $Contacts = 'div:nth-child(2) > header > nav > ul > li:nth-child(3)';
     public static $contactsForm = 'div.col-12.col-lg-5.col-xl-6 > div';
     public static $contactsName = 'div.col-12.col-lg-5.col-xl-6 > div > div:nth-child(2) > input';
     public static $contactsEmail = 'div.col-12.col-lg-5.col-xl-6 > div > div:nth-child(3) > input';
@@ -251,6 +251,9 @@ class jWallet
     public static $sliderElementChange = '#carousel1';
     public static $sliderPrevBtn = '#carousel1 > a.carousel-control-prev';
     public static $sliderNextBtn = '#carousel1 > a.carousel-control-next';
+
+    // Oferta
+    public static $ofertaLink = 'div:nth-child(4) > footer > div > div.logo-s.text-center > div';
 
 
 

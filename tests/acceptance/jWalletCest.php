@@ -74,8 +74,8 @@ class jWalletCest
         $menu_links =[
             ['url' => '/', 'el' => page::$AboutCompany],
             ['url' => '/fees', 'el' => page::$Tariffs],
-            ['url' => '/faq', 'el' => page::$FAQ],
             ['url' => '/contacts', 'el' => page::$Contacts],
+            ['url' => '/terms', 'el' => page::$ofertaLink],
             ['url' => '/signup', 'el' =>page::$cabinetBtn]
         ];
         foreach ($menu_links as $link ){
