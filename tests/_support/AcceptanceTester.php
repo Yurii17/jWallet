@@ -109,6 +109,12 @@ class AcceptanceTester extends \Codeception\Actor
         $value16 = $I->grabTextFrom(page::$historyFilterSystemPay[1]);       // jWallet
         $I->click(page::$historyFilterSystemPay[1]);
         $I->wait(2);
+
+        $I->click(page::$historyFilterCalendar);
+        $I->click(page::$historyFilterCalendarPrev);
+        $I->click(page::$historyFilterCalendarDay);
+        $I->wait(2);
+
         $value17 = $I->grabTextFrom(page::$historySystemPayCol);
         $I->assertSame($value16, $value17);                                  // jWallet
         $I->click(page::$historyFilterSystemPayDrop);

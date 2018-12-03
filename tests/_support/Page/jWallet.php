@@ -218,7 +218,9 @@ class jWallet
     public static $historyFilterRovOpenGrabSystem = 'div:nth-child(1) > strong';
     public static $historyFilterRovOpenGrabSum = 'div:nth-child(3) > strong';
     public static $historyFilterRovOpenGrabSum2 = 'div:nth-child(4) > strong';
-
+    public static $historyFilterCalendar = 'div.form-group.date-input > div > div:nth-child(1) > input';
+    public static $historyFilterCalendarPrev = 'div:nth-child(2) > header > span.prev';
+    public static $historyFilterCalendarDay = 'span:nth-child(12)';
 
 
 
