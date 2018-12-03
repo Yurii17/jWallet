@@ -462,6 +462,10 @@ class jWalletCest
         $value = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);
         $I->click(page::$historyFilterTypeStatusDrop[0]);
         $I->wait(2);
+        $I->click(page::$historyFilterCalendar);
+        $I->click(page::$historyFilterCalendarPrev);
+        $I->click(page::$historyFilterCalendarDay);
+        $I->wait(2);
         $I->fillField(page::$historyFieldSearch, 'Mass');
         $I->click(page::$historyFilterRefreshBtn);
         $I->wait(2);
