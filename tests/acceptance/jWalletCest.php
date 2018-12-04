@@ -140,9 +140,11 @@ class jWalletCest
         $I->wait(3);
         $value3 = $I->grabTextFrom(page::$profileBalance);
         $value4 = $I->grabTextFrom(page::$historyGrabLine);
+        $I->assertNotSame($value,$value3);
         var_dump($value1, $value2, $value, $value3, $value4);
         $I->click(page::$EXIT);
-        $I->assertNotSame($value,$value3);
+        $I->wait(3);
+
     }
     /**
      * @param AcceptanceTester $I
