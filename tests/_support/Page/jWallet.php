@@ -258,6 +258,19 @@ class jWallet
     public static $ofertaLink = 'div:nth-child(4) > footer > div > div.logo-s.text-center > div';
 
 
+    // Support
+    public static $supportLink = 'div.user-box > div > div > div > div > ul > li:nth-child(2) > a';
+    public static $supportBalance = 'li:nth-child(2) > span';
+    public static $supportTicketBtn = 'div.tabs-with-btn.d-flex.justify-content-between > button';
+    public static $supportDropSelect = 'div.new-ticket.pt-5 > div:nth-child(2) > div > div > div';
+    public static $supportSelectList = [
+        'div:nth-child(2) > div > div > div > ul > li:nth-child(1)',
+        'div:nth-child(2) > div > div > div > ul > li:nth-child(2)',
+        'div:nth-child(2) > div > div > div > ul > li:nth-child(3)'
+    ];
+    public static $supportText = '#message';
+    public static $supportCreateDisabledBtn = 'button.btn[disabled="disabled"]';
+    public static $supportCreateActiveBtn = 'div.d-flex.justify-content-between > button:nth-child(1)';
 
 
 

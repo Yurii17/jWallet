@@ -481,9 +481,38 @@ class jWalletCest
         $I->assertSame($value1, $value2);
         $I->assertSame($value2, $value3);
         var_dump($value);
-
     }
-
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function Support(AcceptanceTester $I)
+    {
+        $I->Login($I);
+        $I->click(page::$profileUserBtn);
+        $value = $I->grabTextFrom(page::$supportBalance);
+        $I->click(page::$supportLink);
+        $I->waitForElementVisible(page::$supportTicketBtn, 20);
+        $I->click(page::$profileUserBtn);
+        $I->click(page::$supportTicketBtn);
+        $I->wait(2);
+        $I->click(page::$supportDropSelect);
+        $I->seeElement(page::$supportSelectList[0]);
+        $I->seeElement(page::$supportSelectList[1]);
+        $I->seeElement(page::$supportSelectList[2]);
+        $I->click(page::$supportSelectList[0]);
+        $I->seeElement(page::$supportCreateDisabledBtn);
+        $I->fillField(page::$supportText, 'Text for test');
+        $I->click(page::$supportCreateActiveBtn);
+        $I->wait(2);
+        $I->click(page::$profileUserBtn);
+        $I->wait(3);
+        $value1 = $I->grabTextFrom(page::$supportBalance);
+        $I->assertNotSame($value, $value1);
+        $I->wait(2);
+        $I->click(page::$EXIT);
+        $I->wait(3);
+    }
 
 
     
