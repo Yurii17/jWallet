@@ -182,7 +182,7 @@ class jWalletCest
         $I->assertSame($value4, $value6);
         $I->click(page::$payServiceStatusBtn);
         $I->waitForElementVisible(page::$historyFilter, 100);
-        $I->amOnPage('/account/history');
+        $I->seeInCurrentUrl('/account/history');
         $I->seeElement(page::$historyFilter);
         $I->click(page::$historyID);
         $I->wait(3);
@@ -243,7 +243,7 @@ class jWalletCest
         $I->click(page::$payServiceStatusBtn);
         $I->wait(4);
         $I->seeInCurrentUrl('history');
-        $I->amOnPage('/account/history');
+        $I->seeInCurrentUrl('/account/history');
         $I->seeElement(page::$historyFilter);
         $I->click(page::$historyID);
         $I->wait(3);
@@ -342,8 +342,10 @@ class jWalletCest
     public function HistorySet(AcceptanceTester $I)
     {
         $I->Login($I);
+        $I->seeInCurrentUrl('/account/news');
         $I->click(page::$historyLink);
-        $I->amOnPage('/account/history');
+        $I->wait(5);
+        $I->seeInCurrentUrl('/account/history');
         $I->HistorySet($I);
     }
     /**
@@ -458,8 +460,10 @@ class jWalletCest
     public function SearchHistoryFilter(AcceptanceTester $I)
     {
         $I->Login($I);
+        $I->seeInCurrentUrl('/account/news');
         $I->click(page::$historyLink);
-        $I->amOnPage('/account/history');
+        $I->wait(5);
+        $I->seeInCurrentUrl('/account/history');
         $I->click(page::$historyFilterTypeStatus);
         $value = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);
         $I->click(page::$historyFilterTypeStatusDrop[0]);

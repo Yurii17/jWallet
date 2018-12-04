@@ -214,7 +214,7 @@ class jWallet
     public static $historyFilterRovOpenListBtn = 'div.history-details > div:nth-child(5) > button';
     public static $historyFilterRovOpenListModal = '#infoModal > div > div';
     public static $historyFilterRovOpenListModalGrab = 'tr:nth-child(4) > td';
-    public static $historyFilterRovOpenListModalClose = '#infoModal___BV_modal_header_ > button';
+    public static $historyFilterRovOpenListModalClose = '#infoModal___BV_modal_body_ > i';
     public static $historyFilterRovOpenGrabSystem = 'div:nth-child(1) > strong';
     public static $historyFilterRovOpenGrabSum = 'div:nth-child(3) > strong';
     public static $historyFilterRovOpenGrabSum2 = 'div:nth-child(4) > strong';
