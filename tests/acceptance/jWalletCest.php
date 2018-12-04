@@ -75,8 +75,8 @@ class jWalletCest
             ['url' => '/', 'el' => page::$AboutCompany],
             ['url' => '/fees', 'el' => page::$Tariffs],
             ['url' => '/contacts', 'el' => page::$Contacts],
-            ['url' => '/terms', 'el' => page::$ofertaLink],
-            ['url' => '/signup', 'el' =>page::$cabinetBtn]
+            ['url' => '/signup', 'el' =>page::$cabinetBtn],
+            ['url' => '/terms', 'el' => page::$terms]
         ];
         foreach ($menu_links as $link ){
             $I->setOfActions2($link);
@@ -493,7 +493,6 @@ class jWalletCest
         $value = $I->grabTextFrom(page::$supportBalance);
         $I->click(page::$supportLink);
         $I->waitForElementVisible(page::$supportTicketBtn, 20);
-        $I->click(page::$profileUserBtn);
         $I->click(page::$supportTicketBtn);
         $I->wait(2);
         $I->click(page::$supportDropSelect);

@@ -41,7 +41,7 @@ class jWallet
 
     //Account settings
     public static $Profile = 'div.tabs-with-btn.d-flex.justify-content-between > div > nav > a:nth-child(1)';
-    public static $profileUserBtn = 'div.user-box > div > div:nth-child(2)';
+    public static $profileUserBtn = 'div.user-box > div > div';
     public static $profileSettingsBtn = 'div.drop-btn.dropdown.show > div > div > div.user-name.online > a';
     public static $profileBalance = '#__layout > div > div:nth-child(2) > header > div.user-box > div > span > strong';
     public static $profileHideBalanceBtn = 'div.user-name.online > div';
@@ -255,7 +255,7 @@ class jWallet
     public static $sliderNextBtn = '#carousel1 > a.carousel-control-next';
 
     // Oferta
-    public static $ofertaLink = 'div:nth-child(4) > footer > div > div.logo-s.text-center > div';
+    public static $terms = 'div:nth-child(4) > footer > section > ul > li:nth-child(4)';
 
 
     // Support
