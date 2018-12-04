@@ -228,6 +228,8 @@ class jWallet
     public static $sliderTime = 'div.scroll-time.vue-slider-component.vue-slider-horizontal.vue-slider-has-label';
     public static $sliderSlide = 'div.scroll-time.vue-slider-component.vue-slider-horizontal.vue-slider-has-label > div > div.vue-slider-always.vue-slider-dot';
 
+
+
     //Pay Service
     public static $payService = 'div:nth-child(2) > header > nav > ul > li:nth-child(4)';
     public static $payServiceURL = '#url';
@@ -254,7 +256,7 @@ class jWallet
     public static $sliderPrevBtn = '#carousel1 > a.carousel-control-prev';
     public static $sliderNextBtn = '#carousel1 > a.carousel-control-next';
 
-    // Oferta
+    // Terms
     public static $terms = 'div:nth-child(4) > footer > section > ul > li:nth-child(4)';
 
 
