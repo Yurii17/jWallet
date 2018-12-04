@@ -134,7 +134,7 @@ class jWalletCest
         $I->assertSame($value2, $value4);
         $I->click(page::$moneyTransactionStatusBtn);
         $I->waitForElementVisible(page::$historyFilter, 100);
-        $I->amOnPage('/account/history');
+        $I->seeInCurrentUrl('/account/history');
         $I->seeElement(page::$historyFilter);
         $I->click(page::$historyID);
         $I->wait(3);
