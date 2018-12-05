@@ -111,9 +111,9 @@ class jWalletCest
      */
     public function MoneyTransaction(AcceptanceTester $I)
     {
-        $I->executeJS("window.confirm = function(msg){return true;};");
         $I->Login($I);
-        $I->waitForElementVisible(page::$Vacancies,100);
+        $I->wait(3);
+        $I->executeJS("window.confirm = function(msg){return true;};");
         $I->click(page::$Tariffs);
         $value = $I->grabTextFrom(page::$profileBalance);
         $I->wait(3);
@@ -136,6 +136,7 @@ class jWalletCest
         $I->waitForElementVisible(page::$historyFilter, 100);
         $I->seeInCurrentUrl('/account/history');
         $I->seeElement(page::$historyFilter);
+        $I->wait(2);
         $I->click(page::$historyID);
         $I->wait(3);
         $value3 = $I->grabTextFrom(page::$profileBalance);
