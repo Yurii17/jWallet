@@ -158,6 +158,24 @@ class AcceptanceTester extends \Codeception\Actor
             /*$value20, $value21, $value22, $value23,
             $value24, $value25, $value26, $value27*/);
     }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function SecurityLine(AcceptanceTester $I)
+    {
+        $I->click(page::$profileUserBtn);
+        $I->click(page::$profileSettingsBtn);
+        $I->waitForElementVisible(page::$ProfileActive,20);
+        $I->click(page::$Security);
+        $I->wait(3);
+    }
+
+
+
+
+
+
 
 
 

@@ -65,6 +65,7 @@ class jWallet
     public static $Security = 'div.tabs-with-btn.d-flex.justify-content-between > div > nav > a:nth-child(2)';
     public static $SecurityActive = 'div.tabs-with-btn.d-flex.justify-content-between > div > nav > a.nav-item.nav-link.active';
     public static $SecurityRestrictionOnIP = 'div.col-12.col-lg-6.padding-r-custom';
+    public static $SecurityIp = 'div:nth-child(4) > div > span:nth-child(2)';
     public static $SecurityIpField = 'div.col-12.col-lg-6.padding-r-custom > div.form-group > div > div.input-group-inner > input';
     public static $SecurityIpActiveButton = 'div.col-12.col-lg-6.padding-r-custom > div.form-group > div > div.input-group-append > button';
     public static $SecurityAllowedIp = 'div.col-12.col-lg-6.padding-r-custom > div:nth-child(4) > div';

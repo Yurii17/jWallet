@@ -3,6 +3,7 @@
 use Page\jWallet as Page;
 use \Facebook\WebDriver\WebDriverElement;
 
+
 class jWalletCest
 {
     public $valueFalse = ['', 'mail.ru', 'tt@ma#il.com', 'R.@gmail.com@', '#@%^%#$@#$@#.com', '@domain.com', 'Joe Smith <email@domain.com>', '.email@domain.com'];
@@ -22,8 +23,7 @@ class jWalletCest
     public function Login(AcceptanceTester $I)
     {
         $I->Login($I);
-        $value = $I->grabTextFrom(page::$profileBalance);
-        var_dump($value);
+        $I->wait(2);
         $I->click(page::$profileUserBtn);
         $I->click(page::$profileSettingsBtn);
         $I->waitForElementVisible(page::$ProfileActive);
@@ -309,11 +309,7 @@ class jWalletCest
     {
         $I->Login($I);
         $I->seeInCurrentUrl('/account/news');
-        $I->click(page::$profileUserBtn);
-        $I->click(page::$profileSettingsBtn);
-        $I->wait(2);
-        $I->click(page::$Security);
-        $I->wait(2);
+        $I->SecurityLine($I);
         $before = $I->grabTextFrom(page::$sliderTime);
         $I->slide(page::$sliderSlide,460,0);
         $after = $I->grabTextFrom(page::$sliderTime);
@@ -322,10 +318,7 @@ class jWalletCest
         $I->click(page::$EXIT);
         $I->wait(4);
         $I->Login($I);
-        $I->click(page::$profileUserBtn);
-        $I->click(page::$profileSettingsBtn);
-        $I->wait(2);
-        $I->click(page::$Security);
+        $I->SecurityLine($I);
         $I->scrollTo(page::$sliderSlide);
         $last = $I->grabTextFrom(page::$sliderTime);
         $I->assertSame($after, $last);
@@ -335,6 +328,7 @@ class jWalletCest
         $I->click(page::$securitySaveBtn);
         $I->wait(2);
         $I->click(page::$EXIT);
+        $I->wait(3);
     }
     /**
      * @param AcceptanceTester $I
@@ -518,6 +512,34 @@ class jWalletCest
         $I->wait(2);
         $I->click(page::$EXIT);
         $I->wait(3);
+    }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function VerifyIP(AcceptanceTester $I)
+    {
+        $I->Login($I);
+        $I->SecurityLine($I);
+        $I->fillField(page::$SecurityIpField, '123.123.123.1');
+        $value = $I->grabValueFrom(page::$SecurityIpField);
+        $I->seeElement(page::$SecurityIpActiveButton);
+        $I->click(page::$SecurityIpActiveButton);
+        $I->wait(2);
+        $value1 = $I->grabTextFrom(page::$SecurityIp);
+        $I->click(page::$securitySaveBtn);
+        $I->wait(3);
+        $I->click(page::$EXIT);
+        $I->wait(3);
+        $I->Login($I);
+        $I->SecurityLine($I);
+        $value2 = $I->grabTextFrom(page::$SecurityIp);
+        $I->click(page::$SecurityAllowedIpClose);
+        $I->click(page::$securitySaveBtn);
+        $I->wait(3);
+        $I->click(page::$EXIT);
+        $I->assertSame($value, $value1);
+        $I->assertSame($value, $value2);
     }
 
 
