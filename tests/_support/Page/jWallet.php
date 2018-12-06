@@ -19,14 +19,14 @@ class jWallet
     public static $cabinetBtn = 'div.col-12.col-lg-7.align-self-center > div > a';
 
     // Login form
-    public static $LoginBtn = '#__layout > div > div:nth-child(2) > header > div.user-box > div > button';
+    public static $LoginBtn = 'div:nth-child(2) > header > div.user-box > div > button';
     public static $LoginBtnModal = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.common-link-btn > button';
     public static $LoginToAccount = 'authModal___BV_modal_body_';
-    public static $LoginEmail = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div:nth-child(1) > input';
-    public static $LoginPassword = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div:nth-child(2) > input';
-    public static $LoginRegistration = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.common-link-btn > div > a';
-    public static $LoginForgotPassword = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.common-link-btn > div > span';
-    public static $LoginForgotPasswordEmail = '#authModal___BV_modal_body_ > div > div.common-side.right-side > form > div.form-group > input';
+    public static $LoginEmail = 'div.common-side.right-side > form > div:nth-child(1) > input';
+    public static $LoginPassword = 'div.common-side.right-side > form > div:nth-child(2) > input';
+    public static $LoginRegistration = 'div.common-side.right-side > form > div.common-link-btn > div > a';
+    public static $LoginForgotPassword = 'div.common-side.right-side > form > div.common-link-btn > div > span';
+    public static $LoginForgotPasswordEmail = 'div.common-side.right-side > form > div.form-group > input';
     public static $LoginForgotPasswordBtn = 'div.common-link-btn > button';
 
 
@@ -258,7 +258,7 @@ class jWallet
     public static $sliderNextBtn = '#carousel1 > a.carousel-control-next';
 
     // Terms
-    public static $terms = 'div:nth-child(4) > footer > section > ul > li:nth-child(4)';
+    public static $terms = 'div.logo-s.text-center > div > a:nth-child(1)';
 
 
     // Support
