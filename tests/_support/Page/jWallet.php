@@ -272,7 +272,7 @@ class jWallet
         'div:nth-child(2) > div > div > div > ul > li:nth-child(3)'
     ];
     public static $supportText = '#message';
-    public static $supportCreateDisabledBtn = 'button.btn[disabled="disabled"]';
+    public static $supportCreateDisabledBtn = 'button.btn[class="btn"]';
     public static $supportCreateActiveBtn = 'div.d-flex.justify-content-between > button:nth-child(1)';
 
 
