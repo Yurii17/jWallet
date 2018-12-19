@@ -541,6 +541,25 @@ class jWalletCest
         $I->assertSame($value, $value1);
         $I->assertSame($value, $value2);
     }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function VerifyFillUp(AcceptanceTester $I)
+    {
+        $I->Login($I);
+        $I->seeInCurrentUrl('/account/news');
+        $I->click(page::$depositLink);
+        $I->wait(2);
+        $I->click(page::$depositWex);
+        $I->wait(2);
+        $I->fillField(page::$wexField, 'WEXUSD0000000000000000000000000000000000000000');
+        $I->click(page::$wexBtnActive);
+        $I->wait(2);
+        $I->reloadPage();
+        $I->wait(2);
+        $I->seeInCurrentUrl('/account/deposit-status');
+    }
 
 
     
