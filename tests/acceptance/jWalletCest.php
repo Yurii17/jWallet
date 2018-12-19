@@ -545,7 +545,7 @@ class jWalletCest
      * @param AcceptanceTester $I
      * @throws Exception
      */
-    public function VerifyAccountDeposit(AcceptanceTester $I)
+    public function VerifyWexAccountDeposit(AcceptanceTester $I)
     {
         $I->Login($I);
         $I->seeInCurrentUrl('/account/news');
@@ -553,14 +553,38 @@ class jWalletCest
         $I->wait(2);
         $I->click(page::$depositWex);
         $I->wait(2);
-        $I->fillField(page::$wexField, 'WEXUSD0000000000000000000000000000000000000000');
+        $I->fillField(page::$wexField,
+            'WEXUSD0000000000000000000000000000000000000000');
         $I->click(page::$wexBtnActive);
         $I->wait(2);
         $I->reloadPage();
         $I->wait(2);
         $I->seeInCurrentUrl('/account/deposit-status');
+        $I->click(page::$EXIT);
+        $I->wait(3);
     }
-
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function VerifyExmoAccountDeposit(AcceptanceTester $I)
+    {
+        $I->Login($I);
+        $I->seeInCurrentUrl('/account/news');
+        $I->click(page::$depositLink);
+        $I->wait(2);
+        $I->click(page::$depositExmo);
+        $I->wait(2);
+        $I->fillField(page::$exmoField,
+            'EX-CODE_00000_USD0000000000000000000000000000000000000000');
+        $I->click(page::$exmoBtnActive);
+        $I->wait(2);
+        $I->reloadPage();
+        $I->wait(2);
+        $I->seeInCurrentUrl('/account/deposit-status');
+        $I->click(page::$EXIT);
+        $I->wait(3);
+    }
 
     
 
