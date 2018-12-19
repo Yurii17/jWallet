@@ -175,7 +175,7 @@ class jWallet
 
 
     //Transaction History
-    public static $historyLink = 'div:nth-child(2) > header > nav > ul > li:nth-child(3)';
+    public static $historyLink = 'div:nth-child(2) > header > nav > ul > li:nth-child(5) > a';
     public static $historyFilter = 'div.content-box.history';
     public static $historyBtn = '#__layout > div > section > div.container > div > div:nth-child(2) > div.table-history > div.pagination-box > ul > li:nth-child(9) > a';
     public static $historyFieldSearch = 'div.col-12.col-xl-5.d-flex.justify-content-around.align-items-end.padding-l-n.filter-bottom > div:nth-child(2) > input';
@@ -205,10 +205,10 @@ class jWallet
         'div [class="nice-select open"] > [class = "list"] > li:nth-child(7)',
         'div [class="nice-select open"] > [class = "list"] > li:nth-child(8)'
         ];
-    public static $historySystemPayCol = 'div.table-history > div.table > div.body > div:nth-child(1) > div > div:nth-child(3)';
+    public static $historySystemPayCol = 'div:nth-child(1) > div.d-flex.operation-row > div:nth-child(5)';
     public static $historyGrabLine = 'div.body > div:nth-child(1)';
     public static $historyID = 'div.d-flex.head > div:nth-child(1)';
-    public static $historyStatusCol = 'div [class="d-flex operation-row"] > div:nth-child(5) > span';
+    public static $historyStatusCol = 'div [class="d-flex operation-row"] > div:nth-child(3) > span';
     public static $historyBalance = 'div.table-history > div.table > div.d-flex.head > div:nth-child(7)';
     public static $historyFilterRow = 'div.table-history > div > div.body > div:nth-child(1) > div';
     public static $historyFilterRovOpenBtn = 'button.btn';
@@ -232,7 +232,7 @@ class jWallet
 
 
     //Pay Service
-    public static $payService = 'div:nth-child(2) > header > nav > ul > li:nth-child(4)';
+    public static $payService = 'div:nth-child(2) > header > nav > ul > li:nth-child(3)';
     public static $payServiceURL = '#url';
     public static $payServiceDescription = '#description';
     public static $payServiceDrop = 'div:nth-child(4) > div > div:nth-child(1) > div > div > div > div > div > div';
@@ -275,7 +275,11 @@ class jWallet
     public static $supportCreateDisabledBtn = 'button.btn[class="btn"]';
     public static $supportCreateActiveBtn = 'div.d-flex.justify-content-between > button:nth-child(1)';
 
-
+    //Account Deposit
+    public static $depositLink = 'div:nth-child(2) > header > nav > ul > li:nth-child(1) > a';
+    public static $depositWex = 'div:nth-child(2) > div.card-content.refill > div > div:nth-child(3) > a';
+    public static $wexField = 'div > section > div.container > div > div.deposit > form > div > div > input';
+    public static $wexBtnActive = 'div > section > div.container > div > div.deposit > form > div > button';
 
 
 
