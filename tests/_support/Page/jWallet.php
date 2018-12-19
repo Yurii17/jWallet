@@ -281,8 +281,9 @@ class jWallet
     public static $wexField = 'div > section > div.container > div > div.deposit > form > div > div > input';
     public static $wexBtnActive = 'div > section > div.container > div > div.deposit > form > div > button';
 
-
-
+    public static $depositExmo = 'div:nth-child(2) > div.card-content.refill > div > div:nth-child(4) > a';
+    public static $exmoField = 'div > section > div.container > div > div.deposit > form > div > div > input';
+    public static $exmoBtnActive = 'div > section > div.container > div > div.deposit > form > div > button';
 
 
 
