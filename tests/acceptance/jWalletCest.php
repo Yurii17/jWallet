@@ -545,7 +545,7 @@ class jWalletCest
      * @param AcceptanceTester $I
      * @throws Exception
      */
-    public function VerifyFillUp(AcceptanceTester $I)
+    public function VerifyAccountDeposit(AcceptanceTester $I)
     {
         $I->Login($I);
         $I->seeInCurrentUrl('/account/news');
