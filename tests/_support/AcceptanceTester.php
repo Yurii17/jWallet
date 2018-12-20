@@ -60,7 +60,8 @@ class AcceptanceTester extends \Codeception\Actor
         $I->click(page::$historyFilterTypeInput);                           // Входящий
         $I->wait(2);
         $I->seeElement(page::$historyFilterEmptyValue);                     // Пусте значення поки
-        $I->reloadPage('/account/history');
+        $I->reloadPage();
+        $I->waitForElementVisible(page::$historyFilterTypeStatus,20);
         $I->click(page::$historyFilterTypeStatus);
         $value2 = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);  // Не подтвержден
         $I->click(page::$historyFilterTypeStatusDrop[0]);
@@ -97,7 +98,7 @@ class AcceptanceTester extends \Codeception\Actor
         $I->wait(2);
         $value13 = $I->grabTextFrom(page::$historyFilterEmptyValue);
         $I->assertNotSame($value12, $value13);
-        $I->reloadPage('/account/history');
+        $I->reloadPage();
         $I->wait(2);
         $I->click(page::$historyFilterSystemPayDrop);
         $value14 = $I->grabTextFrom(page::$historyFilterSystemPay[0]);       // Все Системи
@@ -109,14 +110,12 @@ class AcceptanceTester extends \Codeception\Actor
         $value16 = $I->grabTextFrom(page::$historyFilterSystemPay[1]);       // jWallet
         $I->click(page::$historyFilterSystemPay[1]);
         $I->wait(2);
-
         $I->click(page::$historyFilterCalendar);
         $I->click(page::$historyFilterCalendarPrev);
         $I->click(page::$historyFilterCalendarDay);
         $I->wait(2);
-
         $value17 = $I->grabTextFrom(page::$historySystemPayCol);
-        $I->assertSame($value16, $value17);                                  // jWallet
+        $I->assertSame($value16, $value17);                               // jWallet
         $I->click(page::$historyFilterSystemPayDrop);
         $value18 = $I->grabTextFrom(page::$historyFilterSystemPay[2]);       // Bitcoin
         $I->click(page::$historyFilterSystemPay[2]);
