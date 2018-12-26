@@ -426,7 +426,8 @@ class jWalletCest
     {
         $I->Login($I);
         $I->click(page::$historyLink);
-        $I->amOnPage('/account/history');
+        $I->wait(3);
+        $I->seeInCurrentUrl('/account/history');
         $I->click(page::$historyFilterTypeStatus);
         $value = $I->grabTextFrom(page::$historyFilterTypeStatusDrop[0]);
         $I->click(page::$historyFilterTypeStatusDrop[0]);
