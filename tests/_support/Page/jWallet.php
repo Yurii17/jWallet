@@ -135,7 +135,7 @@ class jWallet
 
 
     //Mass transfer
-    public static $MassTransaction = 'div:nth-child(2) > header > nav > ul > li:nth-child(5)';
+    public static $MassTransaction = 'div:nth-child(2) > header > nav > ul > li:nth-child(4)';
     public static $addPayment = 'div:nth-child(2) > form > div.text-center > div';
     public static $addPaymentDrop = [
         '#__layout > div > section > div.container > div > div:nth-child(2) > form > div.text-center > div > div > a:nth-child(1)',
