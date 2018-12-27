@@ -20,7 +20,10 @@ use Page\jWallet as Page;
 class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
-
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
     public function setOfActions2($link)
     {
         $I = $this;
