@@ -14,9 +14,18 @@ class jWallet
      */
 
     // Home
-    public static $Logo = '#__layout > div > div:nth-child(2) > header > a.logo.logo-device.nuxt-link-active > img';
+    public static $Logo = 'div:nth-child(2) > header > a:nth-child(3)';
     public static $Header = '#__layout > div > div:nth-child(2) > header';
     public static $cabinetBtn = 'div.col-12.col-lg-7.align-self-center > div > a';
+    public static $footerLogo = 'div:nth-child(4) > footer > div > div.logo-s.text-center';
+    public static $footerTariffs = 'div:nth-child(4) > footer > section > ul > li:nth-child(1)';
+    public static $footerFeesLogo = 'div:nth-child(5) > footer > div > div.logo-s.text-center > a';
+    public static $footerSocial = [
+        'footer > div > div.social.text-center > a:nth-child(1)',
+        'footer > div > div.social.text-center > a:nth-child(2)',
+        'footer > div > div.social.text-center > a:nth-child(3)',
+        'footer > div > div.social.text-center > a:nth-child(4)'
+        ];
 
     // Login form
     public static $LoginBtn = 'div:nth-child(2) > header > div.user-box > div > button';
