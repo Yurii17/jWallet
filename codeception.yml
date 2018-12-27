@@ -8,6 +8,7 @@ actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+        - Yandex\Allure\Codeception\AllureCodeception
 settings:
     strict_xml: true
     extensions:
