@@ -14,6 +14,6 @@ settings:
         enabled:
             - Yandex\Allure\Adapter\AllureAdapter
         config:
-            Yandex\Allure\Adapter\AllureAdapter:
-                deletePreviousResults: false
+            Yandex\Allure\Codeception\AllureCodeception:
+                deletePreviousResults: true
                 outputDirectory: allure-results
