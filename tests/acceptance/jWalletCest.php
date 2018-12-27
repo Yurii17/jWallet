@@ -72,7 +72,7 @@ class jWalletCest
     public function HomePageLink(AcceptanceTester $I)
     {
         $menu_links =[
-            ['url' => '/', 'el' => page::$AboutCompany],
+            ['url' => '/about', 'el' => page::$AboutCompany],
             ['url' => '/fees', 'el' => page::$Tariffs],
             ['url' => '/contacts', 'el' => page::$Contacts],
             ['url' => '/signup', 'el' =>page::$cabinetBtn],
@@ -585,6 +585,25 @@ class jWalletCest
         $I->seeInCurrentUrl('/account/deposit-status');
         $I->click(page::$EXIT);
         $I->wait(3);
+    }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function VerifyFooterSocialsLogo(AcceptanceTester $I)
+    {
+        $I->scrollTo(page::$footerLogo);
+        $I->seeElement(page::$footerSocial[0]);
+        $I->seeElement(page::$footerSocial[1]);
+        $I->seeElement(page::$footerSocial[2]);
+        $I->seeElement(page::$footerSocial[3]);
+        $I->click(page::$footerTariffs);
+        $I->wait(3);
+        $I->seeInCurrentUrl('/fees');
+        $I->scrollTo(page::$footerFeesLogo);
+        $I->click(page::$footerFeesLogo);
+        $I->wait(2);
+        $I->seeInCurrentUrl('/');
     }
 
     
