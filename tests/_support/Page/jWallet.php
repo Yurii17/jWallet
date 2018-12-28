@@ -166,9 +166,9 @@ class jWallet
     public static $addPaxumConfirm2 = 'div:nth-child(1) > table > tbody > tr:nth-child(6) > td';
     public static $addPaxumStatusConfirm = 'div:nth-child(2) > table > tbody > tr:nth-child(5) > td';
     public static $addPaxumStatusConfirm2 = 'div:nth-child(2) > table > tbody > tr:nth-child(6) > td';
-
     public static $addPaxumConfirmBtn = 'button.btn.btn-warn.d-block.text-center.text-uppercase.mr-sm-5 > span';
     public static $addPaxumConfirmBtnCancel = 'button.btn.btn-danger.d-block.text-center.text-uppercase';
+
 
 
 
