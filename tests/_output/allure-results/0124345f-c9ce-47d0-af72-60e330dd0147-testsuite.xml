@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1546442999629" stop="1546443066807" version="1.4.0">
+  <name>acceptance (chrome)</name>
+  <test-cases>
+    <test-case start="1546442999655" stop="1546443066241" status="passed">
+      <name>HistorySet</name>
+      <steps>
+        <step start="1546443002298" stop="1546443007966" status="passed">
+          <name>am on page "/"</name>
+        </step>
+        <step start="1546443007974" stop="1546443008385" status="passed">
+          <name>click "div:nth-child(2) &gt; header &gt; div•user-box &gt; div &gt; button"</name>
+        </step>
+        <step start="1546443008387" stop="1546443008902" status="passed">
+          <name>wait for element visible "div•common-side•right-side &gt; form &gt; div:nth-child(1) &gt; input",100</name>
+        </step>
+        <step start="1546443008905" stop="1546443011295" status="passed">
+          <name>fill field "div•common-side•right-side &gt; form &gt; div:nth-child(1) &gt; input","yurii•lobas@gmail•com"</name>
+        </step>
+        <step start="1546443011296" stop="1546443012061" status="passed">
+          <name>fill field "div•common-side•right-side &gt; form &gt; div:nth-child(2) &gt; input","12345678"</name>
+        </step>
+        <step start="1546443012064" stop="1546443012281" status="passed">
+          <name>see in field "div•common-side•right-side &gt; form &gt; div:nth-child(1) &gt; input","yurii•lobas@gmail•com"</name>
+        </step>
+        <step start="1546443012283" stop="1546443012432" status="passed">
+          <name>see in field "div•common-side•right-side &gt; form &gt; div:nth-child(2) &gt; input","12345678"</name>
+        </step>
+        <step start="1546443012434" stop="1546443012756" status="passed">
+          <name>click "#authModal___BV_modal_body_ &gt; div &gt; div•common-side•right-side &gt; form &gt; div•common-link-btn &gt; button"</name>
+        </step>
+        <step start="1546443012757" stop="1546443017757" status="passed">
+          <name>wait 5</name>
+        </step>
+        <step start="1546443017759" stop="1546443017778" status="passed">
+          <name>see in current url "/account/news"</name>
+        </step>
+        <step start="1546443017780" stop="1546443018053" status="passed">
+          <name>click "div:nth-child(2) &gt; header &gt; nav &gt; ul &gt; li:nth-child(5) &gt; a"</name>
+        </step>
+        <step start="1546443018055" stop="1546443023055" status="passed">
+          <name>wait 5</name>
+        </step>
+        <step start="1546443023057" stop="1546443023071" status="passed">
+          <name>see in current url "/account/history"</name>
+        </step>
+        <step start="1546443023073" stop="1546443023194" status="passed">
+          <name>grab text from "div•body &gt; div:nth-child(1)"</name>
+        </step>
+        <step start="1546443023195" stop="1546443023441" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(3) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443023442" stop="1546443023705" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(3) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(2)"</name>
+        </step>
+        <step start="1546443023707" stop="1546443025707" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443025709" stop="1546443025793" status="passed">
+          <name>grab text from "div•body &gt; div:nth-child(1)"</name>
+        </step>
+        <step start="1546443025794" stop="1546443025795" status="passed">
+          <name>assert same "2019-01-02 13:50:12\n71713\nПодтвержден\nИсходящий\nPaxum\n- $ 5\n$ 8767283,90","2019-01-02 13:50:12\n71713\nПодтвержден\nИсходящий\nPaxum\n- $ 5\n$ 8767283,90"</name>
+        </step>
+        <step start="1546443025797" stop="1546443025974" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(3) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443025975" stop="1546443026243" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(3) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(3)"</name>
+        </step>
+        <step start="1546443026250" stop="1546443028250" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443028252" stop="1546443028331" status="passed">
+          <name>see element "#__layout &gt; div &gt; section &gt; div•container &gt; div &gt; div:nth-child(2) &gt; div•content-box•history-alert &gt; div"</name>
+        </step>
+        <step start="1546443028332" stop="1546443028347" status="passed">
+          <name>reload page </name>
+        </step>
+        <step start="1546443028352" stop="1546443031539" status="passed">
+          <name>wait for element visible "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(4) &gt; div &gt; div &gt; div",20</name>
+        </step>
+        <step start="1546443031541" stop="1546443031790" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(4) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443031792" stop="1546443031907" status="passed">
+          <name>grab text from "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(2)"</name>
+        </step>
+        <step start="1546443031908" stop="1546443032186" status="passed">
+          <name>click "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(2)"</name>
+        </step>
+        <step start="1546443032188" stop="1546443034188" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443034189" stop="1546443034277" status="passed">
+          <name>grab text from "div•d-flex•operation-row•out &gt; div:nth-child(3) &gt; span"</name>
+        </step>
+        <step start="1546443034278" stop="1546443034278" status="passed">
+          <name>assert same "Не подтвержден","Не подтвержден"</name>
+        </step>
+        <step start="1546443034280" stop="1546443034445" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(4) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443034447" stop="1546443034553" status="passed">
+          <name>grab text from "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(3)"</name>
+        </step>
+        <step start="1546443034554" stop="1546443034792" status="passed">
+          <name>click "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(3)"</name>
+        </step>
+        <step start="1546443034793" stop="1546443036794" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443036795" stop="1546443036848" status="passed">
+          <name>grab text from "div•d-flex•operation-row•out &gt; div:nth-child(3) &gt; span"</name>
+        </step>
+        <step start="1546443036850" stop="1546443036850" status="passed">
+          <name>assert same "Подтвержден","Подтвержден"</name>
+        </step>
+        <step start="1546443036852" stop="1546443037026" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(4) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443037028" stop="1546443037128" status="passed">
+          <name>grab text from "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(4)"</name>
+        </step>
+        <step start="1546443037129" stop="1546443037359" status="passed">
+          <name>click "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(4)"</name>
+        </step>
+        <step start="1546443037361" stop="1546443039360" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443039361" stop="1546443039412" status="passed">
+          <name>grab text from "div•d-flex•operation-row•out &gt; div:nth-child(3) &gt; span"</name>
+        </step>
+        <step start="1546443039413" stop="1546443039413" status="passed">
+          <name>assert same "В очереди","В очереди"</name>
+        </step>
+        <step start="1546443039414" stop="1546443039574" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(4) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443039576" stop="1546443039673" status="passed">
+          <name>grab text from "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(5)"</name>
+        </step>
+        <step start="1546443039674" stop="1546443039918" status="passed">
+          <name>click "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(5)"</name>
+        </step>
+        <step start="1546443039920" stop="1546443041920" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443041921" stop="1546443042001" status="passed">
+          <name>grab text from "#__layout &gt; div &gt; section &gt; div•container &gt; div &gt; div:nth-child(2) &gt; div•content-box•history-alert &gt; div"</name>
+        </step>
+        <step start="1546443042002" stop="1546443042002" status="passed">
+          <name>assert not same "Исполнен","×\nНет данных"</name>
+        </step>
+        <step start="1546443042004" stop="1546443042149" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(4) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443042151" stop="1546443042245" status="passed">
+          <name>grab text from "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(6)"</name>
+        </step>
+        <step start="1546443042249" stop="1546443042481" status="passed">
+          <name>click "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(6)"</name>
+        </step>
+        <step start="1546443042487" stop="1546443044487" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443044488" stop="1546443044561" status="passed">
+          <name>grab text from "div•d-flex•operation-row•out &gt; div:nth-child(3) &gt; span"</name>
+        </step>
+        <step start="1546443044562" stop="1546443044562" status="passed">
+          <name>assert same "Отменен","Отменен"</name>
+        </step>
+        <step start="1546443044563" stop="1546443044717" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(4) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443044719" stop="1546443044822" status="passed">
+          <name>grab text from "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(7)"</name>
+        </step>
+        <step start="1546443044823" stop="1546443045048" status="passed">
+          <name>click "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(7)"</name>
+        </step>
+        <step start="1546443045050" stop="1546443047050" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443047051" stop="1546443047138" status="passed">
+          <name>grab text from "#__layout &gt; div &gt; section &gt; div•container &gt; div &gt; div:nth-child(2) &gt; div•content-box•history-alert &gt; div"</name>
+        </step>
+        <step start="1546443047141" stop="1546443047141" status="passed">
+          <name>assert not same "В процессе","×\nНет данных"</name>
+        </step>
+        <step start="1546443047142" stop="1546443047161" status="passed">
+          <name>reload page </name>
+        </step>
+        <step start="1546443047164" stop="1546443049164" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443049166" stop="1546443050157" status="passed">
+          <name>click "div•col-12•col-xl-5•d-flex•justify-content-around•align-items-end•padding-l-n•filter-bottom &gt; div:nth-child(1) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443050158" stop="1546443050291" status="passed">
+          <name>grab text from "div [class="nice-select open"] &gt; [class = "list"] &gt; li:nth-child(1)"</name>
+        </step>
+        <step start="1546443050292" stop="1546443050528" status="passed">
+          <name>click "div [class="nice-select open"] &gt; [class = "list"] &gt; li:nth-child(1)"</name>
+        </step>
+        <step start="1546443050529" stop="1546443052529" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443052530" stop="1546443052618" status="passed">
+          <name>grab text from "div:nth-child(1) &gt; div•d-flex•operation-row &gt; div:nth-child(5)"</name>
+        </step>
+        <step start="1546443052619" stop="1546443052619" status="passed">
+          <name>assert not same "Все системы","Paxum"</name>
+        </step>
+        <step start="1546443052620" stop="1546443052789" status="passed">
+          <name>click "div•col-12•col-xl-5•d-flex•justify-content-around•align-items-end•padding-l-n•filter-bottom &gt; div:nth-child(1) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443052790" stop="1546443052888" status="passed">
+          <name>grab text from "div [class="nice-select open"] &gt; [class = "list"] &gt; li:nth-child(2)"</name>
+        </step>
+        <step start="1546443052889" stop="1546443053120" status="passed">
+          <name>click "div [class="nice-select open"] &gt; [class = "list"] &gt; li:nth-child(2)"</name>
+        </step>
+        <step start="1546443053124" stop="1546443055124" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443055125" stop="1546443055387" status="passed">
+          <name>click "div•form-group•date-input &gt; div &gt; div:nth-child(1) &gt; input"</name>
+        </step>
+        <step start="1546443055388" stop="1546443055683" status="passed">
+          <name>click "div:nth-child(2) &gt; header &gt; span•prev"</name>
+        </step>
+        <step start="1546443055685" stop="1546443055852" status="passed">
+          <name>click "div:nth-child(2) &gt; header &gt; span•prev"</name>
+        </step>
+        <step start="1546443055854" stop="1546443056114" status="passed">
+          <name>click "span:nth-child(12)"</name>
+        </step>
+        <step start="1546443056125" stop="1546443058124" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443058126" stop="1546443058194" status="passed">
+          <name>grab text from "div:nth-child(1) &gt; div•d-flex•operation-row &gt; div:nth-child(5)"</name>
+        </step>
+        <step start="1546443058195" stop="1546443058195" status="passed">
+          <name>assert same "JWallet","JWallet"</name>
+        </step>
+        <step start="1546443058197" stop="1546443058347" status="passed">
+          <name>click "div•col-12•col-xl-5•d-flex•justify-content-around•align-items-end•padding-l-n•filter-bottom &gt; div:nth-child(1) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443058349" stop="1546443058476" status="passed">
+          <name>grab text from "div [class="nice-select open"] &gt; [class = "list"] &gt; li:nth-child(3)"</name>
+        </step>
+        <step start="1546443058477" stop="1546443058727" status="passed">
+          <name>click "div [class="nice-select open"] &gt; [class = "list"] &gt; li:nth-child(3)"</name>
+        </step>
+        <step start="1546443058728" stop="1546443060728" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443060730" stop="1546443060781" status="passed">
+          <name>grab text from "div:nth-child(1) &gt; div•d-flex•operation-row &gt; div:nth-child(5)"</name>
+        </step>
+        <step start="1546443060783" stop="1546443060783" status="passed">
+          <name>assert same "Bitcoin","Bitcoin"</name>
+        </step>
+        <step start="1546443060785" stop="1546443061043" status="passed">
+          <name>click "#__layout &gt; div &gt; div:nth-child(2) &gt; header &gt; div•user-box &gt; div &gt; a"</name>
+        </step>
+        <step start="1546443061045" stop="1546443065045" status="passed">
+          <name>wait 4</name>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</alr:test-suite>

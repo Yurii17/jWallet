@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1546443354319" stop="1546443401303" version="1.4.0">
+  <name>acceptance (chrome)</name>
+  <test-cases>
+    <test-case start="1546443354345" stop="1546443400686" status="passed">
+      <name>OpenTransactionHistory</name>
+      <steps>
+        <step start="1546443359601" stop="1546443371100" status="passed">
+          <name>am on page "/"</name>
+        </step>
+        <step start="1546443371131" stop="1546443372541" status="passed">
+          <name>click "div:nth-child(2) &gt; header &gt; div•user-box &gt; div &gt; button"</name>
+        </step>
+        <step start="1546443372988" stop="1546443373423" status="passed">
+          <name>wait for element visible "div•common-side•right-side &gt; form &gt; div:nth-child(1) &gt; input",100</name>
+        </step>
+        <step start="1546443373425" stop="1546443377140" status="passed">
+          <name>fill field "div•common-side•right-side &gt; form &gt; div:nth-child(1) &gt; input","yurii•lobas@gmail•com"</name>
+        </step>
+        <step start="1546443377142" stop="1546443378140" status="passed">
+          <name>fill field "div•common-side•right-side &gt; form &gt; div:nth-child(2) &gt; input","12345678"</name>
+        </step>
+        <step start="1546443378145" stop="1546443378406" status="passed">
+          <name>see in field "div•common-side•right-side &gt; form &gt; div:nth-child(1) &gt; input","yurii•lobas@gmail•com"</name>
+        </step>
+        <step start="1546443378408" stop="1546443378644" status="passed">
+          <name>see in field "div•common-side•right-side &gt; form &gt; div:nth-child(2) &gt; input","12345678"</name>
+        </step>
+        <step start="1546443378646" stop="1546443379130" status="passed">
+          <name>click "#authModal___BV_modal_body_ &gt; div &gt; div•common-side•right-side &gt; form &gt; div•common-link-btn &gt; button"</name>
+        </step>
+        <step start="1546443379135" stop="1546443384136" status="passed">
+          <name>wait 5</name>
+        </step>
+        <step start="1546443384138" stop="1546443384435" status="passed">
+          <name>click "div:nth-child(2) &gt; header &gt; nav &gt; ul &gt; li:nth-child(5) &gt; a"</name>
+        </step>
+        <step start="1546443384438" stop="1546443387438" status="passed">
+          <name>wait 3</name>
+        </step>
+        <step start="1546443387440" stop="1546443387457" status="passed">
+          <name>see in current url "/account/history"</name>
+        </step>
+        <step start="1546443387459" stop="1546443387750" status="passed">
+          <name>click "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(4) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443387752" stop="1546443387890" status="passed">
+          <name>grab text from "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(2)"</name>
+        </step>
+        <step start="1546443387892" stop="1546443388196" status="passed">
+          <name>click "div:nth-child(4) &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(2)"</name>
+        </step>
+        <step start="1546443388200" stop="1546443390201" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443390203" stop="1546443390600" status="passed">
+          <name>fill field "div•col-12•col-xl-5•d-flex•justify-content-around•align-items-end•padding-l-n•filter-bottom &gt; div:nth-child(2) &gt; input","Px"</name>
+        </step>
+        <step start="1546443390602" stop="1546443390964" status="passed">
+          <name>click "div•col-12•col-xl-5•d-flex•justify-content-around•align-items-end•padding-l-n•filter-bottom &gt; button"</name>
+        </step>
+        <step start="1546443390966" stop="1546443392966" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443392967" stop="1546443393073" status="passed">
+          <name>grab value from "div•col-12•col-xl-5•d-flex•justify-content-around•align-items-end•padding-l-n•filter-bottom &gt; div:nth-child(2) &gt; input"</name>
+        </step>
+        <step start="1546443393074" stop="1546443393161" status="passed">
+          <name>grab text from "div•col-12•col-xl-7•d-flex•justify-content-around•align-items-end•padding-r-n•filter-top &gt; div:nth-child(4) &gt; div &gt; div &gt; div"</name>
+        </step>
+        <step start="1546443393163" stop="1546443393404" status="passed">
+          <name>click "div•table-history &gt; div &gt; div•body &gt; div:nth-child(1) &gt; div"</name>
+        </step>
+        <step start="1546443393405" stop="1546443395405" status="passed">
+          <name>wait 2</name>
+        </step>
+        <step start="1546443395407" stop="1546443395756" status="passed">
+          <name>see element "button•btn"</name>
+        </step>
+        <step start="1546443395758" stop="1546443395906" status="passed">
+          <name>grab text from "div:nth-child(1) &gt; strong"</name>
+        </step>
+        <step start="1546443395910" stop="1546443396139" status="passed">
+          <name>grab text from "div:nth-child(3) &gt; strong"</name>
+        </step>
+        <step start="1546443396141" stop="1546443396252" status="passed">
+          <name>grab text from "div:nth-child(4) &gt; strong"</name>
+        </step>
+        <step start="1546443396253" stop="1546443396513" status="passed">
+          <name>click "#__layout &gt; div &gt; div:nth-child(2) &gt; header &gt; div•user-box &gt; div &gt; a"</name>
+        </step>
+        <step start="1546443396515" stop="1546443399515" status="passed">
+          <name>wait 3</name>
+        </step>
+        <step start="1546443399516" stop="1546443399518" status="passed">
+          <name>assert same "Не подтвержден","Не подтвержден"</name>
+        </step>
+        <step start="1546443399520" stop="1546443399520" status="passed">
+          <name>assert not same "Px","Paxum"</name>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</alr:test-suite>

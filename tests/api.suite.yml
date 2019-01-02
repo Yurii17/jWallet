@@ -1,0 +1,11 @@
+actor: ApiTester
+modules:
+    enabled:
+    - REST:
+        url: https://api-dev3.jwallet.cc/api
+        depends: PhpBrowser
+        part: Json
+    - PhpBrowser:
+        url: https://api-dev3.jwallet.cc/api
+        headers:
+          accept: application/json
