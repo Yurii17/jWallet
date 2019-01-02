@@ -115,16 +115,17 @@ class AcceptanceTester extends \Codeception\Actor
         $I->wait(2);
         $I->click(page::$historyFilterCalendar);
         $I->click(page::$historyFilterCalendarPrev);
+        $I->click(page::$historyFilterCalendarPrev);
         $I->click(page::$historyFilterCalendarDay);
         $I->wait(2);
         $value17 = $I->grabTextFrom(page::$historySystemPayCol);
-        $I->assertSame($value16, $value17);                               // jWallet
+        $I->assertSame($value16, $value17);                                  // jWallet
         $I->click(page::$historyFilterSystemPayDrop);
         $value18 = $I->grabTextFrom(page::$historyFilterSystemPay[2]);       // Bitcoin
         $I->click(page::$historyFilterSystemPay[2]);
         $I->wait(2);
-        $value19 = $I->grabTextFrom(page::$historyFilterEmptyValue);         // Bitcoin - Empty Result
-        $I->assertNotSame($value18, $value19);
+        $value19 = $I->grabTextFrom(page::$historySystemPayCol);         // Bitcoin - Empty Result
+        $I->assertSame($value18, $value19);
         /*$I->click(page::$historyFilterSystemPayDrop);
         $value20 = $I->grabTextFrom(page::$historyFilterSystemPay[3]);       // BTC-E USD kod
         $I->click(page::$historyFilterSystemPay[3]);
