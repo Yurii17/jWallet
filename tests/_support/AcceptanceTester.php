@@ -172,6 +172,26 @@ class AcceptanceTester extends \Codeception\Actor
         $I->click(page::$Security);
         $I->wait(3);
     }
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function AddPaxumFillField(AcceptanceTester $I)
+    {
+        $I->waitForElementVisible(page::$addPayment,20);
+        $I->click(page::$addPayment);
+        $I->checkOption(page::$addPaymentDrop[0]);
+        $I->wait(2);
+        $I->fillField(page::$addPaxumEmail,'test@mail.com');
+        $I->fillField(page::$addPaxumSum,'10');
+        $I->click(page::$addPayment);
+        $I->checkOption(page::$addPaymentDrop[0]);
+        $I->wait(2);
+        $I->fillField(page::$addPaxumEmail2,'test@mail.com');
+        $I->fillField(page::$addPaxumSum2,'14.99');
+        $I->click(page::$addPaxumBtn);
+    }
+
 
 
 
