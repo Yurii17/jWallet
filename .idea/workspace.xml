@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5a9b659-42fd-4e42-bafc-03a06aaf8a0e" name="Default" comment="release v4">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_output/jWalletCest.HistorySet.fail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_output/jWalletCest.HistorySet.fail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_output/jWalletCest.MoneyTransaction.fail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_output/jWalletCest.MoneyTransaction.fail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_output/jWalletCest.SearchHistoryFilter.fail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_output/jWalletCest.SearchHistoryFilter.fail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_output/jWalletCest.VerifyIP.fail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_output/jWalletCest.VerifyIP.fail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_support/_generated/AcceptanceTesterActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/_support/_generated/AcceptanceTesterActions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_support/_generated/FunctionalTesterActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/_support/_generated/FunctionalTesterActions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/_support/_generated/UnitTesterActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/_support/_generated/UnitTesterActions.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -130,6 +117,7 @@
         <option value="$PROJECT_DIR$/tests/_support/Page/jWallet.php" />
         <option value="$PROJECT_DIR$/tests/acceptance/jWalletCest.php" />
         <option value="$PROJECT_DIR$/tests/_support/AcceptanceTester.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -358,12 +346,12 @@
       <workItem from="1545380226414" duration="1177000" />
       <workItem from="1545772808704" duration="203000" />
       <workItem from="1545818887067" duration="19830000" />
-      <workItem from="1546423030967" duration="11906000" />
+      <workItem from="1546423030967" duration="12289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407266000" />
+    <option name="totallyTimeSpent" value="407649000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
@@ -647,11 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2601" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -704,18 +687,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codeception.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4029" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="51">
+            <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
