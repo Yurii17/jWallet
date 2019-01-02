@@ -614,18 +614,7 @@ class jWalletCest
         $I->Login($I);
         $I->click(page::$MassTransaction);
         $balaneBefore = $I->grabTextFrom(page::$profileBalance);
-        $I->waitForElementVisible(page::$addPayment,20);
-        $I->click(page::$addPayment);
-        $I->checkOption(page::$addPaymentDrop[0]);
-        $I->wait(2);
-        $I->fillField(page::$addPaxumEmail,'vvvv@mail.com');
-        $I->fillField(page::$addPaxumSum,'100');
-        $I->click(page::$addPayment);
-        $I->checkOption(page::$addPaymentDrop[0]);
-        $I->wait(2);
-        $I->fillField(page::$addPaxumEmail2,'vvvv@mail.com');
-        $I->fillField(page::$addPaxumSum2,'100');
-        $I->click(page::$addPaxumBtn);
+        $I->AddPaxumFillField($I);
         $I->executeJS("window.confirm = function(msg){return true;};");
         $I->wait(2);
         $I->click(page::$addPaxumConfirmBtnCancel);
@@ -638,7 +627,23 @@ class jWalletCest
         $I->assertSame($balaneBefore, $balanceAfter);
         var_dump($grabStatus);
     }
-    
+    /**
+     * @param AcceptanceTester $I
+     * @throws Exception
+     */
+    public function AddTransactionNotApproved(AcceptanceTester $I)
+    {
+        $I->Login($I);
+        $I->click(page::$MassTransaction);
+        $I->AddPaxumFillField($I);
+        $I->wait(2);
+        $I->click(page::$historyLink);
+        $I->wait(3);
+        $grabStatus = $I->grabTextFrom(page::$historyStatusCol);
+        $I->click(page::$EXIT);
+        $I->wait(2);
+        var_dump($grabStatus);
+    }
 
 
 
