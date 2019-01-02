@@ -1,3 +1,3 @@
-#jWallet
-# jWalletApi
+# jWallet
+
 
