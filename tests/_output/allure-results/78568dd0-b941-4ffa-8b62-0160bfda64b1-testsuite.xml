@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1546512792548" stop="1546512794589" version="1.4.0">
+  <name>api</name>
+  <test-cases>
+    <test-case start="1546512792574" stop="1546512794583" status="passed">
+      <name>sendPostWrongPasswordError</name>
+      <steps>
+        <step start="1546512792673" stop="1546512794559" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"NSsbyzAnn\\rNMT8"}</name>
+        </step>
+        <step start="1546512794562" stop="1546512794568" status="passed">
+          <name>see response code is 403</name>
+        </step>
+        <step start="1546512794574" stop="1546512794578" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":["Неверное имя пользователя или пароль"]}</name>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</alr:test-suite>

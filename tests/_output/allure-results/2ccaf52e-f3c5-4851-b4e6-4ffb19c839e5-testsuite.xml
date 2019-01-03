@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1546512780844" stop="1546512787901" version="1.4.0">
+  <name>api</name>
+  <test-cases>
+    <test-case start="1546512780880" stop="1546512783145" status="passed">
+      <name>sendPostLoginValid</name>
+      <steps>
+        <step start="1546512780926" stop="1546512783112" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"12345678"}</name>
+        </step>
+        <step start="1546512783115" stop="1546512783121" status="passed">
+          <name>see response code is 200</name>
+        </step>
+        <step start="1546512783123" stop="1546512783135" status="passed">
+          <name>grab data from response by json path "$•data•access_token"</name>
+        </step>
+        <step start="1546512783141" stop="1546512783141" status="passed">
+          <name>am bearer authenticated "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhhZGIxZGIyNDQzYjkxNzk3YTY2OGRkM2YzYzY0ZTljM2I4ZGQ0MDRkYTIwNjdkM2YxZWEzZTZkYmViZTY1ZjI0Y2YyZjk0MDVlMjkzMTQwIn0•eyJhdWQiOiIzIiwianRpIjoiOGFkYjFkYjI0NDN•••"</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512783161" stop="1546512783650" status="passed">
+      <name>sendPostDataNullError</name>
+      <steps>
+        <step start="1546512783196" stop="1546512783638" status="passed">
+          <name>send post "/auth/login",{"email":null,"password":null}</name>
+        </step>
+        <step start="1546512783639" stop="1546512783639" status="passed">
+          <name>see response code is 400</name>
+        </step>
+        <step start="1546512783644" stop="1546512783648" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":{"email":["Поле E-Mail адрес обязательно для заполнения•"]}}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512783661" stop="1546512784083" status="passed">
+      <name>sendPostDataEmptyError</name>
+      <steps>
+        <step start="1546512783664" stop="1546512784074" status="passed">
+          <name>send post "/auth/login",{"email":" ","password":" "}</name>
+        </step>
+        <step start="1546512784075" stop="1546512784075" status="passed">
+          <name>see response code is 400</name>
+        </step>
+        <step start="1546512784079" stop="1546512784079" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":{"email":["Поле E-Mail адрес обязательно для заполнения•"],"password":["Поле Пароль обязательно для заполнения•"]}}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512784095" stop="1546512784598" status="passed">
+      <name>sendPostEmailEmptyError</name>
+      <steps>
+        <step start="1546512784237" stop="1546512784593" status="passed">
+          <name>send post "/auth/login",{"email":null,"password":"m+(PD3B$T$L#"}</name>
+        </step>
+        <step start="1546512784595" stop="1546512784595" status="passed">
+          <name>see response code is 400</name>
+        </step>
+        <step start="1546512784597" stop="1546512784597" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":{"email":["Поле E-Mail адрес обязательно для заполнения•"]}}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512784604" stop="1546512785028" status="passed">
+      <name>sendPostPasswordEmptyError</name>
+      <steps>
+        <step start="1546512784616" stop="1546512785022" status="passed">
+          <name>send post "/auth/login",{"email":"pschultz@example•net","password":null}</name>
+        </step>
+        <step start="1546512785023" stop="1546512785023" status="passed">
+          <name>see response code is 400</name>
+        </step>
+        <step start="1546512785026" stop="1546512785026" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":{"password":["Поле Пароль обязательно для заполнения•"]}}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512785035" stop="1546512785995" status="passed">
+      <name>sendPostWrongPasswordError</name>
+      <steps>
+        <step start="1546512785047" stop="1546512785988" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"v`2;w?![}•Vob0h"}</name>
+        </step>
+        <step start="1546512785990" stop="1546512785990" status="passed">
+          <name>see response code is 403</name>
+        </step>
+        <step start="1546512785994" stop="1546512785994" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":["Неверное имя пользователя или пароль"]}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512786001" stop="1546512786397" status="failed">
+      <name>sendPostPasswordEmailError</name>
+      <failure>
+        <message>Expected HTTP Status Code: 401 (Unauthorized). Actual Status Code: 403 (Forbidden)
+Failed asserting that 403 matches expected 401.</message>
+        <stack-trace>#0 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\Assert.php(2305): PHPUnit\Framework\Constraint\IsEqual-&gt;evaluate(403, 'Expected HTTP S...')
+#1 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\Assert.php(498): PHPUnit\Framework\Assert::assertThat(403, Object(PHPUnit\Framework\Constraint\IsEqual), 'Expected HTTP S...')
+#2 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Util\Shared\Asserts.php(37): PHPUnit\Framework\Assert::assertEquals(401, 403, 'Expected HTTP S...', 0)
+#3 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Lib\InnerBrowser.php(1576): Codeception\Module-&gt;assertEquals(401, 403, 'Expected HTTP S...')
+#4 [internal function]: Codeception\Lib\InnerBrowser-&gt;seeResponseCodeIs(401)
+#5 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Step.php(264): call_user_func_array(Array, Array)
+#6 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Scenario.php(72): Codeception\Step-&gt;run(Object(Codeception\Lib\ModuleContainer))
+#7 D:\codeception\jWallet\tests\_support\_generated\ApiTesterActions.php(1216): Codeception\Scenario-&gt;runStep(Object(Codeception\Step\Assertion))
+#8 D:\codeception\jWallet\tests\api\loginCest.php(107): ApiTester-&gt;seeResponseCodeIs(401)
+#9 [internal function]: loginCest-&gt;sendPostPasswordEmailError(Object(ApiTester))
+#10 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Lib\Di.php(127): ReflectionMethod-&gt;invokeArgs(Object(loginCest), Array)
+#11 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Cest.php(138): Codeception\Lib\Di-&gt;injectDependencies(Object(loginCest), 'sendPostPasswor...', Array)
+#12 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Cest.php(150): Codeception\Test\Cest-&gt;invoke('sendPostPasswor...', Array)
+#13 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Cest.php(82): Codeception\Test\Cest-&gt;executeTestMethod(Object(ApiTester))
+#14 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Test.php(89): Codeception\Test\Cest-&gt;test()
+#15 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\TestSuite.php(746): Codeception\Test\Test-&gt;run(Object(PHPUnit\Framework\TestResult))
+#16 D:\codeception\jWallet\vendor\codeception\phpunit-wrapper\src\Runner.php(117): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#17 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\SuiteManager.php(158): Codeception\PHPUnit\Runner-&gt;doEnhancedRun(Object(Codeception\Suite), Object(PHPUnit\Framework\TestResult), Array)
+#18 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Codecept.php(191): Codeception\SuiteManager-&gt;run(Object(Codeception\PHPUnit\Runner), Object(PHPUnit\Framework\TestResult), Array)
+#19 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Codecept.php(158): Codeception\Codecept-&gt;runSuite(Array, 'api', 'loginCest')
+#20 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Command\Run.php(381): Codeception\Codecept-&gt;run('api', 'loginCest', Array)
+#21 D:\codeception\jWallet\vendor\symfony\console\Command\Command.php(255): Codeception\Command\Run-&gt;execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\codeception\jWallet\vendor\symfony\console\Application.php(901): Symfony\Component\Console\Command\Command-&gt;run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\codeception\jWallet\vendor\symfony\console\Application.php(262): Symfony\Component\Console\Application-&gt;doRunCommand(Object(Codeception\Command\Run), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\codeception\jWallet\vendor\symfony\console\Application.php(145): Symfony\Component\Console\Application-&gt;doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Application.php(108): Symfony\Component\Console\Application-&gt;run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 D:\codeception\jWallet\vendor\codeception\codeception\package\bin(38): Codeception\Application-&gt;run()
+#27 C:\Users\Victoriia\AppData\Roaming\Composer\vendor\codeception\codeception\autoload.php(12): require('D:\\codeception\\...')
+#28 C:\Users\Victoriia\AppData\Roaming\Composer\vendor\codeception\codeception\codecept(7): require_once('C:\\Users\\Victor...')
+#29 {main}</stack-trace>
+      </failure>
+      <steps>
+        <step start="1546512786021" stop="1546512786328" status="passed">
+          <name>send post "/auth/login",{"email":"eswaniawski@example•com","password":"nETq)6ai"2:tl~9N&lt;"}</name>
+        </step>
+        <step start="1546512786335" stop="1546512786368" status="passed">
+          <name>see response code is 401</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512786418" stop="1546512786858" status="failed">
+      <name>sendPostPasswordLengthError</name>
+      <failure>
+        <message>Expected HTTP Status Code: 401 (Unauthorized). Actual Status Code: 403 (Forbidden)
+Failed asserting that 403 matches expected 401.</message>
+        <stack-trace>#0 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\Assert.php(2305): PHPUnit\Framework\Constraint\IsEqual-&gt;evaluate(403, 'Expected HTTP S...')
+#1 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\Assert.php(498): PHPUnit\Framework\Assert::assertThat(403, Object(PHPUnit\Framework\Constraint\IsEqual), 'Expected HTTP S...')
+#2 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Util\Shared\Asserts.php(37): PHPUnit\Framework\Assert::assertEquals(401, 403, 'Expected HTTP S...', 0)
+#3 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Lib\InnerBrowser.php(1576): Codeception\Module-&gt;assertEquals(401, 403, 'Expected HTTP S...')
+#4 [internal function]: Codeception\Lib\InnerBrowser-&gt;seeResponseCodeIs(401)
+#5 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Step.php(264): call_user_func_array(Array, Array)
+#6 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Scenario.php(72): Codeception\Step-&gt;run(Object(Codeception\Lib\ModuleContainer))
+#7 D:\codeception\jWallet\tests\_support\_generated\ApiTesterActions.php(1216): Codeception\Scenario-&gt;runStep(Object(Codeception\Step\Assertion))
+#8 D:\codeception\jWallet\tests\api\loginCest.php(120): ApiTester-&gt;seeResponseCodeIs(401)
+#9 [internal function]: loginCest-&gt;sendPostPasswordLengthError(Object(ApiTester))
+#10 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Lib\Di.php(127): ReflectionMethod-&gt;invokeArgs(Object(loginCest), Array)
+#11 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Cest.php(138): Codeception\Lib\Di-&gt;injectDependencies(Object(loginCest), 'sendPostPasswor...', Array)
+#12 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Cest.php(150): Codeception\Test\Cest-&gt;invoke('sendPostPasswor...', Array)
+#13 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Cest.php(82): Codeception\Test\Cest-&gt;executeTestMethod(Object(ApiTester))
+#14 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Test.php(89): Codeception\Test\Cest-&gt;test()
+#15 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\TestSuite.php(746): Codeception\Test\Test-&gt;run(Object(PHPUnit\Framework\TestResult))
+#16 D:\codeception\jWallet\vendor\codeception\phpunit-wrapper\src\Runner.php(117): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#17 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\SuiteManager.php(158): Codeception\PHPUnit\Runner-&gt;doEnhancedRun(Object(Codeception\Suite), Object(PHPUnit\Framework\TestResult), Array)
+#18 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Codecept.php(191): Codeception\SuiteManager-&gt;run(Object(Codeception\PHPUnit\Runner), Object(PHPUnit\Framework\TestResult), Array)
+#19 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Codecept.php(158): Codeception\Codecept-&gt;runSuite(Array, 'api', 'loginCest')
+#20 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Command\Run.php(381): Codeception\Codecept-&gt;run('api', 'loginCest', Array)
+#21 D:\codeception\jWallet\vendor\symfony\console\Command\Command.php(255): Codeception\Command\Run-&gt;execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\codeception\jWallet\vendor\symfony\console\Application.php(901): Symfony\Component\Console\Command\Command-&gt;run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\codeception\jWallet\vendor\symfony\console\Application.php(262): Symfony\Component\Console\Application-&gt;doRunCommand(Object(Codeception\Command\Run), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\codeception\jWallet\vendor\symfony\console\Application.php(145): Symfony\Component\Console\Application-&gt;doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Application.php(108): Symfony\Component\Console\Application-&gt;run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 D:\codeception\jWallet\vendor\codeception\codeception\package\bin(38): Codeception\Application-&gt;run()
+#27 C:\Users\Victoriia\AppData\Roaming\Composer\vendor\codeception\codeception\autoload.php(12): require('D:\\codeception\\...')
+#28 C:\Users\Victoriia\AppData\Roaming\Composer\vendor\codeception\codeception\codecept(7): require_once('C:\\Users\\Victor...')
+#29 {main}</stack-trace>
+      </failure>
+      <steps>
+        <step start="1546512786460" stop="1546512786843" status="passed">
+          <name>send post "/auth/login",{"email":"earnest65@example•net","password":"12"}</name>
+        </step>
+        <step start="1546512786844" stop="1546512786845" status="passed">
+          <name>see response code is 401</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512786864" stop="1546512787197" status="failed">
+      <name>sendPostWrongEmailError</name>
+      <failure>
+        <message>Expected HTTP Status Code: 401 (Unauthorized). Actual Status Code: 403 (Forbidden)
+Failed asserting that 403 matches expected 401.</message>
+        <stack-trace>#0 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\Assert.php(2305): PHPUnit\Framework\Constraint\IsEqual-&gt;evaluate(403, 'Expected HTTP S...')
+#1 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\Assert.php(498): PHPUnit\Framework\Assert::assertThat(403, Object(PHPUnit\Framework\Constraint\IsEqual), 'Expected HTTP S...')
+#2 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Util\Shared\Asserts.php(37): PHPUnit\Framework\Assert::assertEquals(401, 403, 'Expected HTTP S...', 0)
+#3 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Lib\InnerBrowser.php(1576): Codeception\Module-&gt;assertEquals(401, 403, 'Expected HTTP S...')
+#4 [internal function]: Codeception\Lib\InnerBrowser-&gt;seeResponseCodeIs(401)
+#5 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Step.php(264): call_user_func_array(Array, Array)
+#6 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Scenario.php(72): Codeception\Step-&gt;run(Object(Codeception\Lib\ModuleContainer))
+#7 D:\codeception\jWallet\tests\_support\_generated\ApiTesterActions.php(1216): Codeception\Scenario-&gt;runStep(Object(Codeception\Step\Assertion))
+#8 D:\codeception\jWallet\tests\api\loginCest.php(132): ApiTester-&gt;seeResponseCodeIs(401)
+#9 [internal function]: loginCest-&gt;sendPostWrongEmailError(Object(ApiTester))
+#10 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Lib\Di.php(127): ReflectionMethod-&gt;invokeArgs(Object(loginCest), Array)
+#11 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Cest.php(138): Codeception\Lib\Di-&gt;injectDependencies(Object(loginCest), 'sendPostWrongEm...', Array)
+#12 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Cest.php(150): Codeception\Test\Cest-&gt;invoke('sendPostWrongEm...', Array)
+#13 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Cest.php(82): Codeception\Test\Cest-&gt;executeTestMethod(Object(ApiTester))
+#14 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Test\Test.php(89): Codeception\Test\Cest-&gt;test()
+#15 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\TestSuite.php(746): Codeception\Test\Test-&gt;run(Object(PHPUnit\Framework\TestResult))
+#16 D:\codeception\jWallet\vendor\codeception\phpunit-wrapper\src\Runner.php(117): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#17 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\SuiteManager.php(158): Codeception\PHPUnit\Runner-&gt;doEnhancedRun(Object(Codeception\Suite), Object(PHPUnit\Framework\TestResult), Array)
+#18 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Codecept.php(191): Codeception\SuiteManager-&gt;run(Object(Codeception\PHPUnit\Runner), Object(PHPUnit\Framework\TestResult), Array)
+#19 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Codecept.php(158): Codeception\Codecept-&gt;runSuite(Array, 'api', 'loginCest')
+#20 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Command\Run.php(381): Codeception\Codecept-&gt;run('api', 'loginCest', Array)
+#21 D:\codeception\jWallet\vendor\symfony\console\Command\Command.php(255): Codeception\Command\Run-&gt;execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\codeception\jWallet\vendor\symfony\console\Application.php(901): Symfony\Component\Console\Command\Command-&gt;run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\codeception\jWallet\vendor\symfony\console\Application.php(262): Symfony\Component\Console\Application-&gt;doRunCommand(Object(Codeception\Command\Run), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\codeception\jWallet\vendor\symfony\console\Application.php(145): Symfony\Component\Console\Application-&gt;doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Application.php(108): Symfony\Component\Console\Application-&gt;run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 D:\codeception\jWallet\vendor\codeception\codeception\package\bin(38): Codeception\Application-&gt;run()
+#27 C:\Users\Victoriia\AppData\Roaming\Composer\vendor\codeception\codeception\autoload.php(12): require('D:\\codeception\\...')
+#28 C:\Users\Victoriia\AppData\Roaming\Composer\vendor\codeception\codeception\codecept(7): require_once('C:\\Users\\Victor...')
+#29 {main}</stack-trace>
+      </failure>
+      <steps>
+        <step start="1546512786878" stop="1546512787181" status="passed">
+          <name>send post "/auth/login",{"email":"deckow•joanie@example•org","password":"12345678"}</name>
+        </step>
+        <step start="1546512787185" stop="1546512787185" status="passed">
+          <name>see response code is 401</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512787206" stop="1546512787897" status="passed">
+      <name>sendPostHeaders</name>
+      <steps>
+        <step start="1546512787209" stop="1546512787209" status="passed">
+          <name>have http header "Content-type","application/json"</name>
+        </step>
+        <step start="1546512787211" stop="1546512787893" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"12345678"}</name>
+        </step>
+        <step start="1546512787895" stop="1546512787895" status="passed">
+          <name>see response code is 200</name>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</alr:test-suite>

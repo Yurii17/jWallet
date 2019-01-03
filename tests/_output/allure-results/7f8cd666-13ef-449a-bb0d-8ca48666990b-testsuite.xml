@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1546512922460" stop="1546512928897" version="1.4.0">
+  <name>api</name>
+  <test-cases>
+    <test-case start="1546512922511" stop="1546512924590" status="passed">
+      <name>sendPostLoginValid</name>
+      <steps>
+        <step start="1546512922564" stop="1546512924557" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"12345678"}</name>
+        </step>
+        <step start="1546512924560" stop="1546512924566" status="passed">
+          <name>see response code is 200</name>
+        </step>
+        <step start="1546512924570" stop="1546512924581" status="passed">
+          <name>grab data from response by json path "$•data•access_token"</name>
+        </step>
+        <step start="1546512924586" stop="1546512924586" status="passed">
+          <name>am bearer authenticated "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImFlYThmOWZlOWIxMjBkN2MyMTZhMDdkMGYzNzkzYmZmNzY5YWY3OWIxOWNlNDI5ZWI4Mjg1YTA1ZmRlYjUxNDcxMzYxMzc5NjljOTY0NmZjIn0•eyJhdWQiOiIzIiwianRpIjoiYWVhOGY5ZmU5YjE•••"</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512924600" stop="1546512925043" status="passed">
+      <name>sendPostDataNullError</name>
+      <steps>
+        <step start="1546512924628" stop="1546512925006" status="passed">
+          <name>send post "/auth/login",{"email":null,"password":null}</name>
+        </step>
+        <step start="1546512925010" stop="1546512925010" status="passed">
+          <name>see response code is 400</name>
+        </step>
+        <step start="1546512925015" stop="1546512925032" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":{"email":["Поле E-Mail адрес обязательно для заполнения•"]}}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512925063" stop="1546512925487" status="passed">
+      <name>sendPostDataEmptyError</name>
+      <steps>
+        <step start="1546512925089" stop="1546512925479" status="passed">
+          <name>send post "/auth/login",{"email":" ","password":" "}</name>
+        </step>
+        <step start="1546512925481" stop="1546512925481" status="passed">
+          <name>see response code is 400</name>
+        </step>
+        <step start="1546512925484" stop="1546512925485" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":{"email":["Поле E-Mail адрес обязательно для заполнения•"],"password":["Поле Пароль обязательно для заполнения•"]}}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512925494" stop="1546512926091" status="passed">
+      <name>sendPostEmailEmptyError</name>
+      <steps>
+        <step start="1546512925676" stop="1546512926082" status="passed">
+          <name>send post "/auth/login",{"email":null,"password":"p&gt;&gt;yVE8a8E"}</name>
+        </step>
+        <step start="1546512926083" stop="1546512926084" status="passed">
+          <name>see response code is 400</name>
+        </step>
+        <step start="1546512926089" stop="1546512926089" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":{"email":["Поле E-Mail адрес обязательно для заполнения•"]}}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512926110" stop="1546512926508" status="passed">
+      <name>sendPostPasswordEmptyError</name>
+      <steps>
+        <step start="1546512926128" stop="1546512926500" status="passed">
+          <name>send post "/auth/login",{"email":"terrence29@example•org","password":null}</name>
+        </step>
+        <step start="1546512926502" stop="1546512926502" status="passed">
+          <name>see response code is 400</name>
+        </step>
+        <step start="1546512926506" stop="1546512926506" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":{"password":["Поле Пароль обязательно для заполнения•"]}}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512926514" stop="1546512927093" status="passed">
+      <name>sendPostWrongPasswordError</name>
+      <steps>
+        <step start="1546512926528" stop="1546512927085" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"•a%,L0doAV4!{#;~:%:"}</name>
+        </step>
+        <step start="1546512927087" stop="1546512927087" status="passed">
+          <name>see response code is 403</name>
+        </step>
+        <step start="1546512927091" stop="1546512927091" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":["Неверное имя пользователя или пароль"]}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512927103" stop="1546512927516" status="passed">
+      <name>sendPostPasswordEmailError</name>
+      <steps>
+        <step start="1546512927162" stop="1546512927510" status="passed">
+          <name>send post "/auth/login",{"email":"tanderson@example•com","password":"7=lcL]NH3"}</name>
+        </step>
+        <step start="1546512927512" stop="1546512927512" status="passed">
+          <name>see response code is 403</name>
+        </step>
+        <step start="1546512927514" stop="1546512927515" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":["Неверное имя пользователя или пароль"]}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512927525" stop="1546512927903" status="passed">
+      <name>sendPostPasswordLengthError</name>
+      <steps>
+        <step start="1546512927535" stop="1546512927895" status="passed">
+          <name>send post "/auth/login",{"email":"sienna•strosin@example•org","password":"12"}</name>
+        </step>
+        <step start="1546512927897" stop="1546512927897" status="passed">
+          <name>see response code is 403</name>
+        </step>
+        <step start="1546512927900" stop="1546512927900" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":["Неверное имя пользователя или пароль"]}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512927910" stop="1546512928328" status="passed">
+      <name>sendPostWrongEmailError</name>
+      <steps>
+        <step start="1546512927931" stop="1546512928320" status="passed">
+          <name>send post "/auth/login",{"email":"bharvey@example•org","password":"12345678"}</name>
+        </step>
+        <step start="1546512928322" stop="1546512928323" status="passed">
+          <name>see response code is 403</name>
+        </step>
+        <step start="1546512928326" stop="1546512928326" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":["Неверное имя пользователя или пароль"]}</name>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1546512928335" stop="1546512928893" status="passed">
+      <name>sendPostHeaders</name>
+      <steps>
+        <step start="1546512928338" stop="1546512928338" status="passed">
+          <name>have http header "Content-type","application/json"</name>
+        </step>
+        <step start="1546512928340" stop="1546512928884" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"12345678"}</name>
+        </step>
+        <step start="1546512928886" stop="1546512928887" status="passed">
+          <name>see response code is 200</name>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</alr:test-suite>

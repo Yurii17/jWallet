@@ -91,7 +91,7 @@ class loginCest
             'email' => 'yurii.lobas@gmail.com',
             'password' => fake::create()->password
         ]);
-        $I->seeResponseCodeIs(401);
+        $I->seeResponseCodeIs(403);
         $I->seeErrorMessage(['Неверное имя пользователя или пароль']);
     }
 
@@ -104,7 +104,7 @@ class loginCest
             'email' => fake::create()->safeEmail,
             'password' => fake::create()->password
         ]);
-        $I->seeResponseCodeIs(401);
+        $I->seeResponseCodeIs(403);
         $I->seeErrorMessage(['Неверное имя пользователя или пароль']);
     }
 
@@ -117,7 +117,7 @@ class loginCest
             'email' => fake::create()->safeEmail,
             'password' => '12'
         ]);
-        $I->seeResponseCodeIs(401);
+        $I->seeResponseCodeIs(403);
         $I->seeErrorMessage(['Неверное имя пользователя или пароль']);
     }
     /**
@@ -129,7 +129,7 @@ class loginCest
             'email' => fake::create()->safeEmail,
             'password' => '12345678'
         ]);
-        $I->seeResponseCodeIs(401);
+        $I->seeResponseCodeIs(403);
         $I->seeErrorMessage(['Неверное имя пользователя или пароль']);
     }
 
