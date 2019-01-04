@@ -132,7 +132,7 @@ class profileCest
             "transfer_send_amount" => "10000000"
         ]);
         $I->seeResponseCodeIs(400);
-        $I->seeErrorMessage(["Превышен лимит. Максимальная сумма отправления - 8999653.44USD"]);
+        $I->seeErrorMessage(["Превышен лимит. Максимальная сумма отправления - 8999768.58USD"]);
     }
     /**
      * @param ApiTester $I
@@ -155,7 +155,7 @@ class profileCest
      * @param ApiTester $I
      * @throws Exception
      */
-    public function JWDigitsError(ApiTester $I)
+    public function JWSendAmountError(ApiTester $I)
     {
         $I->sendPOST($this->route[2], [
             "eps_code" => "JW",
@@ -167,7 +167,7 @@ class profileCest
         ]);
         $I->seeResponseCodeIs(400);
         $I->seeErrorMessage(["transfer_send_amount" =>
-        ["Поле transfer send amount должно быть числом."]]);
+        ["Поле 'Сумма отправления' должно быть числом."]]);
     }
     /**
      * @param ApiTester $I
@@ -188,7 +188,7 @@ class profileCest
         ]);
         $I->seeResponseCodeIs(400);
         $I->seeErrorMessage(["transfer_subject" =>
-        ["Количество символов в поле transfer subject не может превышать 200."]]);
+        ["Количество символов в поле 'Предмет перевода' не может превышать 200."]]);
     }
 
 
