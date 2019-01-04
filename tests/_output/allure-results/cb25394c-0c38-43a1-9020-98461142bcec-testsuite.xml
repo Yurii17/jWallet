@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1546528589000" stop="1546528589261" version="1.4.0">
+  <name>api</name>
+  <test-cases>
+    <test-case start="1546528589020" stop="1546528589258" status="broken">
+      <name>JWDigits</name>
+      <failure>
+        <message>cURL error 6: Could not resolve host: api-dev3.jwallet.cc (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)</message>
+        <stack-trace>#0 D:\codeception\jWallet\vendor\phpunit\phpunit\src\Framework\TestSuite.php(746): Codeception\Test\Test-&gt;run(Object(PHPUnit\Framework\TestResult))
+#1 D:\codeception\jWallet\vendor\codeception\phpunit-wrapper\src\Runner.php(118): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#2 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\SuiteManager.php(158): Codeception\PHPUnit\Runner-&gt;doEnhancedRun(Object(Codeception\Suite), Object(PHPUnit\Framework\TestResult), Array)
+#3 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Codecept.php(192): Codeception\SuiteManager-&gt;run(Object(Codeception\PHPUnit\Runner), Object(PHPUnit\Framework\TestResult), Array)
+#4 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Codecept.php(159): Codeception\Codecept-&gt;runSuite(Array, 'api', 'profileCest')
+#5 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Command\Run.php(384): Codeception\Codecept-&gt;run('api', 'profileCest', Array)
+#6 D:\codeception\jWallet\vendor\symfony\console\Command\Command.php(255): Codeception\Command\Run-&gt;execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 D:\codeception\jWallet\vendor\symfony\console\Application.php(901): Symfony\Component\Console\Command\Command-&gt;run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 D:\codeception\jWallet\vendor\symfony\console\Application.php(262): Symfony\Component\Console\Application-&gt;doRunCommand(Object(Codeception\Command\Run), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 D:\codeception\jWallet\vendor\symfony\console\Application.php(145): Symfony\Component\Console\Application-&gt;doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 D:\codeception\jWallet\vendor\codeception\codeception\src\Codeception\Application.php(108): Symfony\Component\Console\Application-&gt;run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 D:\codeception\jWallet\vendor\codeception\codeception\package\bin(38): Codeception\Application-&gt;run()
+#12 C:\Users\Victoriia\AppData\Roaming\Composer\vendor\codeception\codeception\autoload.php(12): require('D:\\codeception\\...')
+#13 C:\Users\Victoriia\AppData\Roaming\Composer\vendor\codeception\codeception\codecept(7): require_once('C:\\Users\\Victor...')
+#14 {main}</stack-trace>
+      </failure>
+      <steps>
+        <step start="1546528589036" stop="1546528589247" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"12345678"}</name>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</alr:test-suite>

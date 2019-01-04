@@ -5,7 +5,7 @@ require_once __DIR__.'/loginCest.php';
 
 class profileCest
 {
-    public $route = ['/profile' , '/ticket'];
+    public $route = ['/profile' , '/ticket', '/transfer?lang=ru'];
 
     /**
      * @param ApiTester $I
@@ -77,12 +77,107 @@ class profileCest
                 "server_time" => "2018-12-10 10:44:03",
                 "server_timezone" => "UTC",
                 "paypin_secret" => "WBUHX5JQSE2Y7XHJ",
-                "paypin_barcode_url" => "https://chart.googleapis.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth%3A%2F%2Ftotp%2FjWallet%3Fsecret%3DWBUHX5JQSE2Y7XHJ"],
+                "paypin_barcode_url" =>
+                    "https://chart.googleapis.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth%3A%2F%2Ftotp%2FjWallet%3Fsecret%3DWBUHX5JQSE2Y7XHJ"],
                 "message" => "success"
         ]);
         $I->seeAuthErrorMessage();
 
     }
+
+    // ApiAccountTransfer
+
+    /**
+     * @param ApiTester $I
+     * @throws Exception
+     */
+    public function JWReceiverError(ApiTester $I)
+    {
+        $I->sendPOST($this->route[2], [
+            "eps_code" => "JW",
+            "transfer_input" => "transfer_send",
+            "transfer_receive_amount" => "10.00",
+            "transfer_receiver_type" => "text",
+            "transfer_receiver_value" => "JU000000",
+            "transfer_send_amount" => "10"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["Неправильно введен получатель"]);
+    }
+    /**
+     * @param ApiTester $I
+     * @throws Exception
+     */
+    public function JWAmountLimitError(ApiTester $I)
+    {
+        $I->sendPOST($this->route[2], [
+            "eps_code" => "JW",
+            "transfer_input" => "transfer_send",
+            "transfer_receive_amount" => "10000000.00",
+            "transfer_receiver_type" => "text",
+            "transfer_receiver_value" => "JU000000000",
+            "transfer_send_amount" => "10000000"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["Превышен лимит. Максимальная сумма отправления - 8999659.44USD"]);
+    }
+    /**
+     * @param ApiTester $I
+     * @throws Exception
+     */
+    public function JWMinAmountError(ApiTester $I)
+    {
+        $I->sendPOST($this->route[2], [
+            "eps_code" => "JW",
+            "transfer_input" => "transfer_send",
+            "transfer_receive_amount" => "1.00",
+            "transfer_receiver_type" => "text",
+            "transfer_receiver_value" => "JU000000000",
+            "transfer_send_amount" => "1"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["Минимальная сумма отправления - $2"]);
+    }
+    /**
+     * @param ApiTester $I
+     * @throws Exception
+     */
+    public function JWDigitsError(ApiTester $I)
+    {
+        $I->sendPOST($this->route[2], [
+            "eps_code" => "JW",
+            "transfer_input" => "transfer_send",
+            "transfer_receive_amount" => "12.00",
+            "transfer_receiver_type" => "text",
+            "transfer_receiver_value" => "JU000000000",
+            "transfer_send_amount" => "12$$#^"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["transfer_send_amount" =>
+        ["Поле transfer send amount должно быть числом."]]);
+    }
+    /**
+     * @param ApiTester $I
+     * @throws Exception
+     */
+    public function JWTextError(ApiTester $I)
+    {
+        $I->sendPOST($this->route[2], [
+            "eps_code" => "JW",
+            "transfer_input" => "transfer_send",
+            "transfer_receive_amount" => "2.00",
+            "transfer_receiver_type" => "text",
+            "transfer_receiver_value" => "JU000000000",
+            "transfer_send_amount" => "2",
+            "transfer_subject" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        ]);
+        $I->seeResponseCodeIs(500);
+
+    }
+
+
 
 
 

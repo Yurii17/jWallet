@@ -4,7 +4,6 @@ use loginCest;
 use profileCest;
 use recoveryPasswordCest;
 
-
 /**
  * Inherited Methods
  * @method void wantToTest($text)
