@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1546597393998" stop="1546597396503" version="1.4.0">
+  <name>api</name>
+  <test-cases>
+    <test-case start="1546597394019" stop="1546597396498" status="passed">
+      <name>JWAmountLimitError</name>
+      <steps>
+        <step start="1546597394035" stop="1546597396172" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"12345678"}</name>
+        </step>
+        <step start="1546597396174" stop="1546597396181" status="passed">
+          <name>see response code is 200</name>
+        </step>
+        <step start="1546597396183" stop="1546597396192" status="passed">
+          <name>grab data from response by json path "$•data•access_token"</name>
+        </step>
+        <step start="1546597396195" stop="1546597396195" status="passed">
+          <name>am bearer authenticated "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVmZjAxNDE5NWE2ZGM2NjMwODMyNmU0NzkyNDQ3ZmI3ZTQ2N2IxYjllNTRhZTY1NTk4NzBjZmVkY2VjYjg1YjNiNzMzNjRhNTNhNDg0ZTk1In0•eyJhdWQiOiIzIiwianRpIjoiNWZmMDE0MTk1YTZ•••"</name>
+        </step>
+        <step start="1546597396198" stop="1546597396488" status="passed">
+          <name>send post "/transfer?lang=ru",{"eps_code":"JW","transfer_input":"transfer_send","transfer_receive_amount":"10000000•00","transfer_receiver_type":"text","transfer_receiver_value":"JU000000000","transfer_send•••}</name>
+        </step>
+        <step start="1546597396490" stop="1546597396490" status="passed">
+          <name>see response code is 400</name>
+        </step>
+        <step start="1546597396492" stop="1546597396495" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":["Превышен лимит• Максимальная сумма отправления - 8999653•44USD"]}</name>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</alr:test-suite>

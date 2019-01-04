@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1546592480930" stop="1546592485781" version="1.4.0">
+  <name>api</name>
+  <test-cases>
+    <test-case start="1546592481439" stop="1546592485717" status="passed">
+      <name>JWTextError</name>
+      <steps>
+        <step start="1546592481772" stop="1546592484819" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"12345678"}</name>
+        </step>
+        <step start="1546592484825" stop="1546592485020" status="passed">
+          <name>see response code is 200</name>
+        </step>
+        <step start="1546592485022" stop="1546592485224" status="passed">
+          <name>grab data from response by json path "$•data•access_token"</name>
+        </step>
+        <step start="1546592485248" stop="1546592485248" status="passed">
+          <name>am bearer authenticated "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMyMmQ3YjQ4MTc2NjViM2MwODljYWY2NjE4MjAyMjkxYTIyMDgxZjkzNDA0MzFkYTFhZWI0ODU1NWZlNTU4OGZhNGZhMDMzMWZlYzExMWU0In0•eyJhdWQiOiIzIiwianRpIjoiMzIyZDdiNDgxNzY•••"</name>
+        </step>
+        <step start="1546592485251" stop="1546592485709" status="passed">
+          <name>send post "/transfer?lang=ru",{"eps_code":"JW","transfer_input":"transfer_send","transfer_receive_amount":"2•00","transfer_receiver_type":"text","transfer_receiver_value":"JU000000000","transfer_send_amount•••}</name>
+        </step>
+        <step start="1546592485710" stop="1546592485711" status="passed">
+          <name>see response code is 500</name>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</alr:test-suite>

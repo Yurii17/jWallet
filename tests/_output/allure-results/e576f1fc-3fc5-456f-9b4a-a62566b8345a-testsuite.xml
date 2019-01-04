@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1546593867148" stop="1546593869547" version="1.4.0">
+  <name>api</name>
+  <test-cases>
+    <test-case start="1546593867168" stop="1546593869543" status="passed">
+      <name>sendPostTicketValid</name>
+      <steps>
+        <step start="1546593867180" stop="1546593869144" status="passed">
+          <name>send post "/auth/login",{"email":"yurii•lobas@gmail•com","password":"12345678"}</name>
+        </step>
+        <step start="1546593869146" stop="1546593869151" status="passed">
+          <name>see response code is 200</name>
+        </step>
+        <step start="1546593869153" stop="1546593869166" status="passed">
+          <name>grab data from response by json path "$•data•access_token"</name>
+        </step>
+        <step start="1546593869170" stop="1546593869170" status="passed">
+          <name>am bearer authenticated "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc5YWZlZmJhMGU5M2ViOTY3NzYxNGZlYWJhNmYyNDdhY2ZiOTEwODdkYzEwMzcyZGRhNmM0ZWExNTI0YzBlZjEwOWU5NjM1MjBmMTQwYjhiIn0•eyJhdWQiOiIzIiwianRpIjoiNzlhZmVmYmEwZTk•••"</name>
+        </step>
+        <step start="1546593869172" stop="1546593869173" status="passed">
+          <name>have http header "Content-type","application/json"</name>
+        </step>
+        <step start="1546593869174" stop="1546593869174" status="passed">
+          <name>delete header "Authorization"</name>
+        </step>
+        <step start="1546593869176" stop="1546593869464" status="passed">
+          <name>send post "/ticket",{"data":{"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI0NDk3ZmM4YjE4ODY3MjJkM2Y4YWEwY2VjMjg\n                4NThlZTI3YTZmZTdlMDQxYmY3MTlkZThkYjBhYjg5MDBmODViMzZiNTRjYjJ•••}</name>
+        </step>
+        <step start="1546593869466" stop="1546593869466" status="passed">
+          <name>see response code is 401</name>
+        </step>
+        <step start="1546593869467" stop="1546593869541" status="passed">
+          <name>see response contains json {"data":[],"message":"error","errors":["Не авторизован"]}</name>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</alr:test-suite>
