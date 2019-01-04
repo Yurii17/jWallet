@@ -73,4 +73,31 @@ class ApiTester extends \Codeception\Actor
         $this->seeResponseCodeIs(401);
         $this->seeErrorMessage(['Не авторизован']);
    }
+
+   public function seeErrorLoginMessage()
+   {
+       $this->seeResponseCodeIs(400);
+       $this->seeErrorMessage([
+           'email' => ['Поле \'Email\' обязательно для заполнения.'],
+           'password' => ['Поле \'Пароль\' обязательно для заполнения.']]);
+   }
+
+   public function seeErrorEmailMessage()
+   {
+       $this->seeResponseCodeIs(400);
+       $this->seeErrorMessage(['email' => ['Поле \'Email\' обязательно для заполнения.']]);
+   }
+
+   public function seeErrorPasswordMessage()
+   {
+       $this->seeResponseCodeIs(400);
+       $this->seeErrorMessage(['password' => ['Поле \'Пароль\' обязательно для заполнения.']]);
+   }
+
+   public function seeErrorWrongPasswordMessage()
+   {
+       $this->seeResponseCodeIs(403);
+       $this->seeErrorMessage(['Неверное имя пользователя или пароль']);
+   }
+
 }
