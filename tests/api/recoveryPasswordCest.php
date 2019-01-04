@@ -17,8 +17,7 @@ class recoveryPasswordCest
         $I->sendGET($this->route, [
             'email' => ''
         ]);
-        $I->seeResponseCodeIs(400);
-        $I->seeErrorMessage(['email' => ["Поле E-Mail адрес обязательно для заполнения."]]);
+        $I->seeErrorEmailMessage();
     }
     /**
      * @param ApiTester $I
@@ -28,8 +27,7 @@ class recoveryPasswordCest
         $I->sendGET($this->route, [
             'email' => null
         ]);
-        $I->seeResponseCodeIs(400);
-        $I->seeErrorMessage(['email' => ["Поле E-Mail адрес обязательно для заполнения."]]);
+        $I->seeErrorEmailMessage();
     }
     /**
      * @param ApiTester $I

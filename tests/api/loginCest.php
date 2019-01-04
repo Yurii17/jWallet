@@ -36,10 +36,7 @@ class loginCest
             'email' => null,
             'password' => null
         ]);
-        $I->seeResponseCodeIs(400);
-        $I->seeErrorMessage([
-            "email" => ['Поле E-Mail адрес обязательно для заполнения.']
-        ]);
+        $I->seeErrorLoginMessage();
     }
 
     /**
@@ -51,9 +48,7 @@ class loginCest
             'email' => ' ',
             'password' => ' '
         ]);
-        $I->seeResponseCodeIs(400);
-        $I->seeErrorMessage(['email' => ['Поле E-Mail адрес обязательно для заполнения.'],
-            'password' => ['Поле Пароль обязательно для заполнения.']]);
+        $I->seeErrorLoginMessage();
     }
 
     /**
@@ -65,9 +60,7 @@ class loginCest
             'email' => null,
             'password' => fake::create()->password
         ]);
-        $I->seeResponseCodeIs(400);
-        $I->seeErrorMessage(['email' => ['Поле E-Mail адрес обязательно для заполнения.']
-            ]);
+        $I->seeErrorEmailMessage();
     }
 
     /**
@@ -79,8 +72,7 @@ class loginCest
             'email' => fake::create()->safeEmail,
             'password' => null
         ]);
-        $I->seeResponseCodeIs(400);
-        $I->seeErrorMessage(['password' => ['Поле Пароль обязательно для заполнения.']]);
+        $I->seeErrorPasswordMessage();
     }
     /**
      * @param ApiTester $I
@@ -91,8 +83,7 @@ class loginCest
             'email' => 'yurii.lobas@gmail.com',
             'password' => fake::create()->password
         ]);
-        $I->seeResponseCodeIs(403);
-        $I->seeErrorMessage(['Неверное имя пользователя или пароль']);
+        $I->seeErrorWrongPasswordMessage();
     }
 
     /**
@@ -104,8 +95,7 @@ class loginCest
             'email' => fake::create()->safeEmail,
             'password' => fake::create()->password
         ]);
-        $I->seeResponseCodeIs(403);
-        $I->seeErrorMessage(['Неверное имя пользователя или пароль']);
+        $I->seeErrorWrongPasswordMessage();
     }
 
     /**
@@ -117,8 +107,7 @@ class loginCest
             'email' => fake::create()->safeEmail,
             'password' => '12'
         ]);
-        $I->seeResponseCodeIs(403);
-        $I->seeErrorMessage(['Неверное имя пользователя или пароль']);
+        $I->seeErrorWrongPasswordMessage();
     }
     /**
      * @param ApiTester $I
@@ -129,8 +118,7 @@ class loginCest
             'email' => fake::create()->safeEmail,
             'password' => '12345678'
         ]);
-        $I->seeResponseCodeIs(403);
-        $I->seeErrorMessage(['Неверное имя пользователя или пароль']);
+        $I->seeErrorWrongPasswordMessage();
     }
 
     /**
