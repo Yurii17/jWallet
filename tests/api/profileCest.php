@@ -48,7 +48,19 @@ class profileCest
         $I->removeAuthHeader();
         $I->sendPOST($this->route[1] ,[
             "data" => ["access_token" =>
-                "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI0NDk3ZmM4YjE4ODY3MjJkM2Y4YWEwY2VjMjg4NThlZTI3YTZmZTdlMDQxYmY3MTlkZThkYjBhYjg5MDBmODViMzZiNTRjYjJlMzAwMzdlIn0.eyJhdWQiOiIzIiwianRpIjoiYjQ0OTdmYzhiMTg4NjcyMmQzZjhhYTBjZWMyODg1OGVlMjdhNmZlN2UwNDFiZjcxOWRlOGRiMGFiODkwMGY4NWIzNmI1NGNiMmUzMDAzN2UiLCJpYXQiOjE1NDQ0Mzg2NDIsIm5iZiI6MTU0NDQzODY0MiwiZXhwIjoxNTc1OTc0NjQyLCJzdWIiOiIzOCIsInNjb3BlcyI6W119.gE-xwg8zNg3LhWL5TSDsDqDI-6gmlSE0-K9Sa9LMDvz_p2SYCszbOf3Vg51-Bm9O-ThnqxclFoT2NC8pYBh_Adk50wTIhnK05GN-Me3gGZ1-3VnDPxHgNOH_bUSm9mCDh4aIqb-FDmt8uFA9QQ517YbK7ERqzxo-SQ231qc2IKOgGOoItyVt48ocnCU7AGeTQLiJhC4d31R9KcYswijYNtV0hhVm4ak9uvhROfEkyL5Icsg1bEwU5LGbtHxnULJGk5UcRdWa2IMFkpjP3tsUsay5erTk7cEHAt0PvW_r0uB3SmntcehuphyZy98zZL36vi0w_tmYnkIRmqeQLDWdyZdLdXYg-I0QUvTr4qvAd1ymBci7TDBsent3eOVBfhiLdDBLD3Sw7VqG0wSJGqgxE6MrkDgnsxhtJmTKDf1myhKwNIEqC7k1r0VnLgdZhqedUpLaKbRK9SAv1evCgRbHW8vABgSN0oOg66WPNwAORq8dx7eCQQJq2CQbfQ2RtOw55dfFk2mHFxIoZd0pFLOJ1TBhzMIhZg6Jrh8R5k2ACSyQ_dLVnnCURS9fSop8AMTobNnGJs81rV1c8ufyZZWpd3xH93c9GTfcouNAZB7FXBJXL_C9gXIzOAQQLG94FZS5GfY53VnTrytyd4eos-ioxo-VsJhod94XE-fwrvRXopU",
+                "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI0NDk3ZmM4YjE4ODY3MjJkM2Y4YWEwY2VjMjg
+                4NThlZTI3YTZmZTdlMDQxYmY3MTlkZThkYjBhYjg5MDBmODViMzZiNTRjYjJlMzAwMzdlIn0.eyJhdWQiOiI
+                zIiwianRpIjoiYjQ0OTdmYzhiMTg4NjcyMmQzZjhhYTBjZWMyODg1OGVlMjdhNmZlN2UwNDFiZjcxOWRlOGR
+                iMGFiODkwMGY4NWIzNmI1NGNiMmUzMDAzN2UiLCJpYXQiOjE1NDQ0Mzg2NDIsIm5iZiI6MTU0NDQzODY0Miw
+                iZXhwIjoxNTc1OTc0NjQyLCJzdWIiOiIzOCIsInNjb3BlcyI6W119.gE-xwg8zNg3LhWL5TSDsDqDI-6gmlSE0
+                -K9Sa9LMDvz_p2SYCszbOf3Vg51-Bm9O-ThnqxclFoT2NC8pYBh_Adk50wTIhnK05GN-Me3gGZ1-3VnDPxHgNOH
+                _bUSm9mCDh4aIqb-FDmt8uFA9QQ517YbK7ERqzxo-SQ231qc2IKOgGOoItyVt48ocnCU7AGeTQLiJhC4d31R9Kc
+                YswijYNtV0hhVm4ak9uvhROfEkyL5Icsg1bEwU5LGbtHxnULJGk5UcRdWa2IMFkpjP3tsUsay5erTk7cEHAt0PvW
+                _r0uB3SmntcehuphyZy98zZL36vi0w_tmYnkIRmqeQLDWdyZdLdXYg-I0QUvTr4qvAd1ymBci7TDBsent3eOVBfhi
+                LdDBLD3Sw7VqG0wSJGqgxE6MrkDgnsxhtJmTKDf1myhKwNIEqC7k1r0VnLgdZhqedUpLaKbRK9SAv1evCgRbHW8vA
+                BgSN0oOg66WPNwAORq8dx7eCQQJq2CQbfQ2RtOw55dfFk2mHFxIoZd0pFLOJ1TBhzMIhZg6Jrh8R5k2ACSyQ_dLVnn
+                CURS9fSop8AMTobNnGJs81rV1c8ufyZZWpd3xH93c9GTfcouNAZB7FXBJXL_C9gXIzOAQQLG94FZS5GfY53VnTrytyd
+                4eos-ioxo-VsJhod94XE-fwrvRXopU",
                 "token_type" => "Bearer",
                 "expires_at" => "2018-12-10 10:59:02",
                 "id" => 38,
@@ -78,7 +90,8 @@ class profileCest
                 "server_timezone" => "UTC",
                 "paypin_secret" => "WBUHX5JQSE2Y7XHJ",
                 "paypin_barcode_url" =>
-                    "https://chart.googleapis.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth%3A%2F%2Ftotp%2FjWallet%3Fsecret%3DWBUHX5JQSE2Y7XHJ"],
+                    "https://chart.googleapis.com/chart?chs=200x200&chld=M|0
+                    &cht=qr&chl=otpauth%3A%2F%2Ftotp%2FjWallet%3Fsecret%3DWBUHX5JQSE2Y7XHJ"],
                 "message" => "success"
         ]);
         $I->seeAuthErrorMessage();
@@ -119,7 +132,7 @@ class profileCest
             "transfer_send_amount" => "10000000"
         ]);
         $I->seeResponseCodeIs(400);
-        $I->seeErrorMessage(["Превышен лимит. Максимальная сумма отправления - 8999659.44USD"]);
+        $I->seeErrorMessage(["Превышен лимит. Максимальная сумма отправления - 8999653.44USD"]);
     }
     /**
      * @param ApiTester $I
@@ -173,8 +186,9 @@ class profileCest
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt."
         ]);
-        $I->seeResponseCodeIs(500);
-
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["transfer_subject" =>
+        ["Количество символов в поле transfer subject не может превышать 200."]]);
     }
 
 
