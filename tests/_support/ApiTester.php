@@ -78,20 +78,20 @@ class ApiTester extends \Codeception\Actor
    {
        $this->seeResponseCodeIs(400);
        $this->seeErrorMessage([
-           'email' => ['Поле \'Email\' обязательно для заполнения.'],
-           'password' => ['Поле \'Пароль\' обязательно для заполнения.']]);
+           'email' => ["Поле 'Email' обязательно для заполнения."],
+           'password' => ["Поле 'Пароль' обязательно для заполнения."]]);
    }
 
    public function seeErrorEmailMessage()
    {
        $this->seeResponseCodeIs(400);
-       $this->seeErrorMessage(['email' => ['Поле \'Email\' обязательно для заполнения.']]);
+       $this->seeErrorMessage(['email' => ["Поле 'Email' обязательно для заполнения."]]);
    }
 
    public function seeErrorPasswordMessage()
    {
        $this->seeResponseCodeIs(400);
-       $this->seeErrorMessage(['password' => ['Поле \'Пароль\' обязательно для заполнения.']]);
+       $this->seeErrorMessage(['password' => ["Поле 'Пароль' обязательно для заполнения."]]);
    }
 
    public function seeErrorWrongPasswordMessage()
