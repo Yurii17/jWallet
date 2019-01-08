@@ -6,7 +6,7 @@ require_once __DIR__.'/loginCest.php';
 class profileCest
 {
     public $route = ['/profile' , '/ticket', '/transfer?lang=ru',
-        '/walletTransactionMass?lang=ru', '/transferService?lang=ru', '/deposit?lang=ru'];
+        '/walletTransactionMass?lang=ru', '/transferService?lang=ru', '/deposit?lang=ru', '/security?lang=ru'];
 
     /**
      * @param ApiTester $I
@@ -24,6 +24,7 @@ class profileCest
         $I->seeResponseCodeIs(200);
         $I->seeResponseContainsJson(["email" => "yurii.lobas@gmail.com"]);
     }
+
 
     // tests
     public function sendGetUserProfileAuthError(ApiTester $I)
@@ -324,8 +325,109 @@ class profileCest
             "eps_code" => "WEX",
             "money_code" => "WEXUSD0000000000000000000000000000000000000000"
         ]);
-        $I->seeResponseCodeIs(200);
+        $I->seeResponseIsOk();
     }
+
+    public function sendPostSecurityFakePasswordError(ApiTester $I)                       // Security PayPin
+    {
+        $I->sendPOST($this->route[6], [
+            "action" => "user_paypin_disable",
+            "paypin_password" => fake::create()->randomDigit,
+            "paypin_type" => "password"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["paypin_password" =>
+            ["Количество символов в поле 'Пароль' должно быть не менее 4."]]);
+    }
+
+    public function sendPostSecurityPasswordError(ApiTester $I)                         // Security PayPin
+    {
+        $I->sendPOST($this->route[6], [
+            "action" => "user_paypin",
+            "paypin_password" => "1234567",
+            "paypin_password_confirmation" => "12345678",
+            "paypin_type" => "password"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["paypin_password_confirmation" =>
+            ["Значения полей 'Подтверждение пароля' и 'Пароль' должны совпадать."]]);
+    }
+
+    public function sendPostSecurityConfirmationError(ApiTester $I)                         // Security PayPin
+    {
+        $I->sendPOST($this->route[6], [
+            "action" => "user_paypin",
+            "paypin_password" => "",
+            "paypin_password_confirmation" => "1",
+            "paypin_type" => "password"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage([
+            "paypin_password" => [
+                "Поле 'Пароль' должно быть строкой.",
+                "Количество символов в поле 'Пароль' должно быть не менее 4."],
+            "paypin_password_confirmation" => [
+                "Значения полей 'Подтверждение пароля' и 'Пароль' должны совпадать."]
+        ]);
+    }
+
+    public function sendPostSecurityConfirmationNullError(ApiTester $I)                         // Security PayPin
+    {
+        $I->sendPOST($this->route[6], [
+            "action" => "user_paypin",
+            "paypin_password" => "1",
+            "paypin_password_confirmation" => "",
+            "paypin_type" => "password"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage([
+            "paypin_password" => [
+                "Количество символов в поле 'Пароль' должно быть не менее 4."],
+            "paypin_password_confirmation" => [
+                "Поле 'Подтверждение пароля' должно быть строкой.",
+                "Значения полей 'Подтверждение пароля' и 'Пароль' должны совпадать."]
+        ]);
+    }
+
+    public function sendPostSecurityNullNullPasswordError(ApiTester $I)                         // Security PayPin
+    {
+        $I->sendPOST($this->route[6], [
+            "action" => "user_paypin",
+            "paypin_password" => null,
+            "paypin_password_confirmation" => null,
+            "paypin_type" => "password"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["Неверный пароль для PayPin"]);
+    }
+
+    public function sendPostSecurityNullPasswordError(ApiTester $I)                       // Security PayPin
+    {
+        $I->sendPOST($this->route[6], [
+            "action" => "user_paypin_disable",
+            "paypin_password" => null,
+            "paypin_type" => "password"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["Неверный пароль для PayPin"]);
+    }
+
+    public function sendPostSecurityGoogleAuthError(ApiTester $I)                       // GoogleAuth
+    {
+        $I->sendPOST($this->route[6], [
+            "action" => "user_paypin",
+            "paypin_code" => "123456",
+            "paypin_secret" => "WYZXBFMZR7BSAFGH",
+            "paypin_type" => "googleauth"
+        ]);
+        $I->seeResponseCodeIs(400);
+        $I->seeErrorMessage(["Неверный PayPinType. Текущий сохранненый PayPinType пользователя: password"]);
+    }
+
+
+
+
+
 
 
 
