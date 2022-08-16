@@ -1,6 +1,30 @@
-vendor\
-.idea
-.idea\*
-*.jpg
-tests\_output\*
-vendor/*
+node_modules
+/public/hot
+/public/storage
+/storage/*.key
+vendor
+
+** ENV **
+.env
+.env.backup
+
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/public/build/
+/public/mix-manifest.json
+/storage/*.key
+/storage/geoip.mmdb
+.phpunit.result.cache
+npm-debug.log
+yarn-error.log
+/data/*
+.idea/*
+_ide_helper.php
+.phpstorm.meta.php
+package-json.lock
+
+** TEST ** 
+/tests/_output/*
